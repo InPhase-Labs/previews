@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0OCA0OCIgZmlsbD0ibm9uZSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48ZGVmcz48Y2xpcFBhdGggaWQ9ImN5Ij48Y2lyY2xlIGN4PSIyNCIgY3k9IjI0IiByPSIyMSIvPjwvY2xpcFBhdGg+PC9kZWZzPjxjaXJjbGUgY3g9IjI0IiBjeT0iMjQiIHI9IjIyLjIiIGZpbGw9IiMxMTEiIHN0cm9rZT0iIzNBM0E0MCIgc3Ryb2tlLXdpZHRoPSIxLjIiLz48ZyBzdHJva2Utd2lkdGg9IjMiPjxwYXRoIGQ9Ik0xMS41MCwyNC4wMCBMMTEuNjgsMjQuMzkgTDExLjg2LDI0Ljc3IEwxMi4wNCwyNS4xNCBMMTIuMjEsMjUuNTAgTDEyLjM5LDI1Ljg0IEwxMi41NywyNi4xNyBMMTIuNzUsMjYuNDggTDEyLjkzLDI2Ljc4IEwxMy4xMSwyNy4wNiBMMTMuMjksMjcuMzIgTDEzLjQ2LDI3LjU3IEwxMy42NCwyNy44MSBMMTMuODIsMjguMDIgTDE0LjAwLDI4LjIzIEwxNC4xOCwyOC40MiBMMTQuMzYsMjguNTkgTDE0LjU0LDI4Ljc2IEwxNC43MSwyOC45MSBMMTQuODksMjkuMDUgTDE1LjA3LDI5LjE3IEwxNS4yNSwyOS4yOSBMMTUuNDMsMjkuMzkgTDE1LjYxLDI5LjQ5IEwxNS43OSwyOS41OCBMMTUuOTYsMjkuNjYgTDE2LjE0LDI5LjczIEwxNi4zMiwyOS43OSBMMTYuNTAsMjkuODUgTDE2LjY4LDI5LjkwIEwxNi44NiwyOS45NSBMMTcuMDQsMjkuOTkgTDE3LjIxLDMwLjAzIEwxNy4zOSwzMC4wNiBMMTcuNTcsMzAuMDggTDE3Ljc1LDMwLjExIEwxNy45MywzMC4xMyBMMTguMTEsMzAuMTUgTDE4LjI5LDMwLjE2IEwxOC40NiwzMC4xNyBMMTguNjQsMzAuMTggTDE4LjgyLDMwLjE5IEwxOS4wMCwzMC4xOSBMMTkuMTgsMzAuMjAgTDE5LjM2LDMwLjIwIEwxOS41NCwzMC4yMCBMMTkuNzEsMzAuMjAgTDE5Ljg5LDMwLjIwIEwyMC4wNywzMC4xOSBMMjAuMjUsMzAuMTkgTDIwLjQzLDMwLjE4IEwyMC42MSwzMC4xNyBMMjAuNzksMzAuMTYgTDIwLjk2LDMwLjE1IEwyMS4xNCwzMC4xNCBMMjEuMzIsMzAuMTIgTDIxLjUwLDMwLjEwIEwyMS42OCwzMC4wOSBMMjEuODYsMzAuMDcgTDIyLjA0LDMwLjA0IEwyMi4yMSwzMC4wMiBMMjIuMzksMjkuOTkgTDIyLjU3LDI5Ljk2IEwyMi43NSwyOS45MyBMMjIuOTMsMjkuODkgTDIzLjExLDI5Ljg1IEwyMy4yOSwyOS44MSBMMjMuNDYsMjkuNzYgTDIzLjY0LDI5LjcxIEwyMy44MiwyOS42NiBMMjQuMDAsMjkuNjAgTDI0LjE4LDI5LjUzIEwyNC4zNiwyOS40NiBMMjQuNTQsMjkuMzggTDI0LjcxLDI5LjI5IEwyNC44OSwyOS4yMCBMMjUuMDcsMjkuMDkgTDI1LjI1LDI4Ljk4IEwyNS40MywyOC44NiBMMjUuNjEsMjguNzQgTDI1Ljc5LDI4LjYwIEwyNS45NiwyOC40NSBMMjYuMTQsMjguMjkgTDI2LjMyLDI4LjEyIEwyNi41MCwyNy45MyBMMjYuNjgsMjcuNzQgTDI2Ljg2LDI3LjUzIEwyNy4wNCwyNy4zMCBMMjcuMjEsMjcuMDcgTDI3LjM5LDI2LjgyIEwyNy41NywyNi41NiBMMjcuNzUsMjYuMjggTDI3LjkzLDI1Ljk5IEwyOC4xMSwyNS42OCBMMjguMjksMjUuMzYgTDI4LjQ2LDI1LjAzIEwyOC42NCwyNC42OCBMMjguODIsMjQuMzMgTDI5LjAwLDIzLjk2IEwyOS4xOCwyMy41OSBMMjkuMzYsMjMuMjAgTDI5LjU0LDIyLjgxIEwyOS43MSwyMi40MyBMMjkuODksMjIuMDUgTDMwLjA3LDIxLjY3IEwzMC4yNSwyMS4zMSBMMzAuNDMsMjAuOTYgTDMwLjYxLDIwLjYyIEwzMC43OSwyMC4yOSBMMzAuOTYsMTkuOTggTDMxLjE0LDE5LjY5IEwzMS4zMiwxOS40MSBMMzEuNTAsMTkuMTUgTDMxLjY4LDE4LjkxIEwzMS44NiwxOC43MCBMMzIuMDQsMTguNTAgTDMyLjIxLDE4LjMzIEwzMi4zOSwxOC4xOCBMMzIuNTcsMTguMDYgTDMyLjc1LDE3Ljk2IEwzMi45MywxNy44OCBMMzMuMTEsMTcuODMgTDMzLjI5LDE3LjgwIEwzMy40NiwxNy44MCBMMzMuNjQsMTcuODMgTDMzLjgyLDE3Ljg4IEwzNC4wMCwxNy45NiBMMzQuMTgsMTguMDYgTDM0LjM2LDE4LjE4IEwzNC41NCwxOC4zMyBMMzQuNzEsMTguNTAgTDM0Ljg5LDE4LjcwIEwzNS4wNywxOC45MSBMMzUuMjUsMTkuMTUgTDM1LjQzLDE5LjQxIEwzNS42MSwxOS42OSBMMzUuNzksMTkuOTggTDM1Ljk2LDIwLjI5IEwzNi4xNCwyMC42MiBMMzYuMzIsMjAuOTYgTDM2LjUwLDIxLjMxIiBzdHJva2U9IiMxRjhBNEMiLz48cGF0aCBkPSJNMTEuNTAsMjQuMDAgTDExLjY4LDIzLjYwIEwxMS44NiwyMy4yMSBMMTIuMDQsMjIuODEgTDEyLjIxLDIyLjQzIEwxMi4zOSwyMi4wNSBMMTIuNTcsMjEuNjcgTDEyLjc1LDIxLjMxIEwxMi45MywyMC45NiBMMTMuMTEsMjAuNjIgTDEzLjI5LDIwLjI5IEwxMy40NiwxOS45OCBMMTMuNjQsMTkuNjkgTDEzLjgyLDE5LjQxIEwxNC4wMCwxOS4xNSBMMTQuMTgsMTguOTEgTDE0LjM2LDE4LjcwIEwxNC41NCwxOC41MCBMMTQuNzEsMTguMzMgTDE0Ljg5LDE4LjE4IEwxNS4wNywxOC4wNiBMMTUuMjUsMTcuOTYgTDE1LjQzLDE3Ljg4IEwxNS42MSwxNy44MyBMMTUuNzksMTcuODAgTDE1Ljk2LDE3LjgwIEwxNi4xNCwxNy44MyBMMTYuMzIsMTcuODggTDE2LjUwLDE3Ljk2IEwxNi42OCwxOC4wNiBMMTYuODYsMTguMTggTDE3LjA0LDE4LjMzIEwxNy4yMSwxOC41MCBMMTcuMzksMTguNzAgTDE3LjU3LDE4LjkxIEwxNy43NSwxOS4xNSBMMTcuOTMsMTkuNDEgTDE4LjExLDE5LjY5IEwxOC4yOSwxOS45OCBMMTguNDYsMjAuMjkgTDE4LjY0LDIwLjYyIEwxOC44MiwyMC45NiBMMTkuMDAsMjEuMzEgTDE5LjE4LDIxLjY3IEwxOS4zNiwyMi4wNSBMMTkuNTQsMjIuNDMgTDE5LjcxLDIyLjgxIEwxOS44OSwyMy4yMSBMMjAuMDcsMjMuNjAgTDIwLjI1LDI0LjAwIEwyMC40MywyNC40MCBMMjAuNjEsMjQuNzkgTDIwLjc5LDI1LjE5IEwyMC45NiwyNS41NyBMMjEuMTQsMjUuOTUgTDIxLjMyLDI2LjMzIEwyMS41MCwyNi42OSBMMjEuNjgsMjcuMDQgTDIxLjg2LDI3LjM4IEwyMi4wNCwyNy43MSBMMjIuMjEsMjguMDIgTDIyLjM5LDI4LjMxIEwyMi41NywyOC41OSBMMjIuNzUsMjguODUgTDIyLjkzLDI5LjA5IEwyMy4xMSwyOS4zMCBMMjMuMjksMjkuNTAgTDIzLjQ2LDI5LjY3IEwyMy42NCwyOS44MiBMMjMuODIsMjkuOTQgTDI0LjAwLDMwLjA0IEwyNC4xOCwzMC4xMiBMMjQuMzYsMzAuMTcgTDI0LjU0LDMwLjIwIEwyNC43MSwzMC4yMCBMMjQuODksMzAuMTcgTDI1LjA3LDMwLjEyIEwyNS4yNSwzMC4wNCBMMjUuNDMsMjkuOTQgTDI1LjYxLDI5LjgyIEwyNS43OSwyOS42NyBMMjUuOTYsMjkuNTAgTDI2LjE0LDI5LjMwIEwyNi4zMiwyOS4wOSBMMjYuNTAsMjguODUgTDI2LjY4LDI4LjU5IEwyNi44NiwyOC4zMSBMMjcuMDQsMjguMDIgTDI3LjIxLDI3LjcxIEwyNy4zOSwyNy4zOCBMMjcuNTcsMjcuMDQgTDI3Ljc1LDI2LjY5IEwyNy45MywyNi4zMyBMMjguMTEsMjUuOTUgTDI4LjI5LDI1LjU3IEwyOC40NiwyNS4xOSBMMjguNjQsMjQuNzkgTDI4LjgyLDI0LjQwIEwyOS4wMCwyNC4wMCBMMjkuMTgsMjMuNjAgTDI5LjM2LDIzLjIxIEwyOS41NCwyMi44MSBMMjkuNzEsMjIuNDMgTDI5Ljg5LDIyLjA1IEwzMC4wNywyMS42NyBMMzAuMjUsMjEuMzEgTDMwLjQzLDIwLjk2IEwzMC42MSwyMC42MiBMMzAuNzksMjAuMjkgTDMwLjk2LDE5Ljk4IEwzMS4xNCwxOS42OSBMMzEuMzIsMTkuNDEgTDMxLjUwLDE5LjE1IEwzMS42OCwxOC45MSBMMzEuODYsMTguNzAgTDMyLjA0LDE4LjUwIEwzMi4yMSwxOC4zMyBMMzIuMzksMTguMTggTDMyLjU3LDE4LjA2IEwzMi43NSwxNy45NiBMMzIuOTMsMTcuODggTDMzLjExLDE3LjgzIEwzMy4yOSwxNy44MCBMMzMuNDYsMTcuODAgTDMzLjY0LDE3LjgzIEwzMy44MiwxNy44OCBMMzQuMDAsMTcuOTYgTDM0LjE4LDE4LjA2IEwzNC4zNiwxOC4xOCBMMzQuNTQsMTguMzMgTDM0LjcxLDE4LjUwIEwzNC44OSwxOC43MCBMMzUuMDcsMTguOTEgTDM1LjI1LDE5LjE1IEwzNS40MywxOS40MSBMMzUuNjEsMTkuNjkgTDM1Ljc5LDE5Ljk4IEwzNS45NiwyMC4yOSBMMzYuMTQsMjAuNjIgTDM2LjMyLDIwLjk2IEwzNi41MCwyMS4zMSIgc3Ryb2tlPSIjM0RGRjhBIi8+PC9nPjwvc3ZnPg==">
+<title>Activity Mapper · InPhase Labs</title>
+<style>
+:root{--ink:#111;--soft:#555;--mute:#777;--line:#E2E2E5;--card:#F7F7F8;--brand:#0B41CD;--brandd:#0832A0;
+--red:#B42318;--redl:#F3C9C4;--green:#1F7A45;--greenl:#BFE0CB;--blue:#2B5C9E;--bluel:#E3EDF8;--amber:#9A6200;--amberl:#FBEFD9}
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","SF Pro Display",Inter,"Helvetica Neue",Arial,sans-serif;color:var(--ink);background:#fff;font-size:14px;line-height:1.45}
+button,select{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
+
+.top{display:flex;align-items:center;gap:16px;padding:6px 16px;border-bottom:1px solid var(--line);position:sticky;top:0;background:#fff;z-index:5}
+.brand{display:flex;align-items:center;gap:10px;white-space:nowrap}
+.brand .client{font-weight:700;color:var(--ink);font-size:12px;letter-spacing:-.2px;display:flex;align-items:center;gap:5px}
+.brand .client .mark{flex:none}
+.brand .app{color:#333;font-size:12px;border-left:1px solid var(--line);padding-left:10px}
+nav{flex:1;display:flex;justify-content:center;align-items:center;gap:4px;overflow-x:auto;scrollbar-width:none;min-width:0}
+nav::-webkit-scrollbar{display:none}
+nav button{white-space:nowrap}
+nav .divider{width:1px;height:18px;background:#CFCFD4;margin:0 6px;flex:none}
+nav .mine{margin-left:14px}
+body.reviewer [data-admin]{display:none}
+nav button{border:none;background:none;padding:6px 12px;border-radius:999px;color:#333;cursor:pointer}
+nav button:hover{background:#F1F1F3}
+nav button[aria-current="page"]{background:var(--ink);color:#fff;font-weight:600}
+nav .n{font-size:11px;background:#FBE5E2;color:var(--red);border-radius:9px;padding:0 6px;margin-left:4px;font-weight:700}
+nav button[aria-current="page"] .n{background:#fff}
+.right{display:flex;align-items:center;gap:10px}
+.sel{border:1px solid var(--line);border-radius:10px;padding:5px 8px;background:#fff;font-size:13px}
+.search{display:flex;align-items:center;gap:6px;background:#F4F4F6;border:1px solid var(--line);border-radius:8px;padding:5px 10px;width:200px;color:var(--mute)}
+.pillbtn{background:var(--bluel);color:#1D3F70;border:1px solid #C9DBF0;border-radius:999px;padding:5px 12px;font-weight:600;font-size:13px}
+.avatar{width:28px;height:28px;border-radius:50%;background:var(--ink);color:#fff;font-size:11px;font-weight:700;display:grid;place-items:center}
+
+.banner{background:var(--bluel);color:#1D3F70;font-size:13px;text-align:center;padding:7px 16px;border-bottom:1px solid #C9DBF0}
+
+main{max-width:1120px;margin:0 auto;padding:36px 24px 120px}
+.head{display:flex;justify-content:space-between;align-items:flex-start;gap:20px}
+h1{font-size:40px;font-weight:400;margin:0 0 4px;letter-spacing:-.5px}
+.sub{color:#444;margin:0 0 24px;max-width:72ch}
+.seg{display:inline-flex;background:#EDEDF0;border-radius:8px;padding:3px;flex:none}
+.seg button{border:none;background:none;padding:7px 10px;border-radius:6px;color:#444;cursor:pointer}
+.seg button.on{background:#fff;color:var(--ink);font-weight:600;box-shadow:0 1px 2px rgba(0,0,0,.08)}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px}
+.filters select{border:1px solid #CFCFD4;border-radius:4px;padding:8px 10px;min-width:150px;background:#fff}
+.btn{border:1.5px solid var(--ink);background:#fff;border-radius:4px;padding:6px 11px;font-weight:600;font-size:13px;cursor:pointer;white-space:nowrap}
+.btn:hover{background:#F4F4F6}
+.btn.ok{border:1px solid var(--greenl);color:var(--green)}
+.btn.ok::before{content:"✓";margin-right:8px}
+.btn.del{border:1px solid var(--redl);color:var(--red);font-weight:500}
+
+.stats{display:flex;gap:32px;flex-wrap:wrap;margin:0 0 28px}
+.stats div{font-size:13px;color:var(--soft)}
+.stats b{display:block;font-size:26px;font-weight:400;color:var(--ink)}
+.stats .r b{color:var(--red)}.stats .a b{color:var(--amber)}
+
+.card{background:#fff;border:1px solid var(--line);border-top:3px solid var(--ink);border-radius:10px;margin-bottom:20px;overflow:hidden}
+.ch{display:flex;align-items:center;gap:12px;padding:14px 16px;cursor:pointer;width:100%;border:none;background:none;text-align:left}
+.ch .chev{font-size:12px;color:#444;transition:transform .15s;display:inline-block;width:12px}
+.card.open .ch .chev{transform:rotate(90deg)}
+.ch .title{font-size:20px;flex:1}
+.ch .meta{font-size:12px;color:var(--soft);text-align:right}
+.body{display:none;background:#fff;border-top:1px solid var(--line)}
+.card.open .body{display:block}
+
+.row{display:grid;grid-template-columns:116px 1fr auto;gap:12px;padding:14px 16px;border-bottom:1px solid #EDEDF0;align-items:start}
+.row:last-child{border-bottom:none}
+.row.flag{box-shadow:inset 2px 0 0 var(--red)}
+.row.flagA{box-shadow:inset 2px 0 0 #D79A2B}
+.chip{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.3px;padding:3px 7px;border-radius:3px;background:var(--bluel);color:var(--blue);text-transform:uppercase;justify-self:start}
+.chip.g{background:#E3F2E9;color:var(--green)}.chip.a{background:var(--amberl);color:var(--amber)}
+.chip.r{background:#FBE5E2;color:var(--red)}.chip.k{background:#ECECEF;color:#555}.chip.d{background:var(--ink);color:#fff}
+.rt{font-weight:500}
+.warn{color:var(--red);margin-right:6px}
+.rm{font-size:12px;color:var(--soft);margin-top:3px}
+.ri{font-size:12px;color:var(--soft);font-style:italic;margin-top:2px}
+.crumb{font-size:12px;color:var(--soft);margin-top:4px;display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.crumb .sq{width:8px;height:8px;display:inline-block}
+.crumb b{font-weight:500;color:#222}
+.acts{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
+.subhead{padding:10px 16px;background:#FBFBFC;border-bottom:1px solid #EDEDF0;font-size:13px;font-weight:600;color:#333}
+.subhead span{font-weight:400;color:var(--mute);margin-left:6px}
+.ev{margin-top:4px;font-size:12px;font-style:italic;color:var(--soft);max-width:72ch}
+.ev cite{font-style:normal;color:var(--mute);font-size:11px;margin-left:4px}
+.ev cite::before{content:"· "}
+.fix{margin-top:6px;font-size:12.5px;max-width:72ch}
+.fix b{font-weight:600}
+
+.matrix{overflow-x:auto;background:#fff;border:1px solid var(--line);border-radius:6px}
+table{border-collapse:collapse;width:100%;min-width:860px}
+th,td{border-bottom:1px solid #EDEDF0;padding:10px 8px;font-size:13px}
+thead th{background:var(--card);font-weight:600;text-align:center;font-size:12px;vertical-align:bottom}
+thead th small{display:block;font-weight:400;color:var(--mute)}
+thead th:first-child,tbody th{text-align:left;padding-left:16px}
+tbody th{font-weight:500}
+td{text-align:center}
+.dot{display:inline-block;width:12px;height:12px;border-radius:50%}
+.dot.o{background:var(--ink)}.dot.c{border:2px solid #888}
+.legend{display:flex;gap:16px;font-size:12px;color:var(--soft);padding:10px 16px;flex-wrap:wrap}
+.legend span{display:inline-flex;gap:6px;align-items:center}
+
+.preview{display:none;grid-column:2 / -1;background:#FBFBFC;border:1px solid var(--line);border-radius:4px;padding:16px 20px;font-size:13px;max-width:76ch}
+.preview.show{display:block}
+.preview h4{margin:0 0 6px;font-size:15px}
+.preview h5{margin:12px 0 4px;font-size:13px}
+.preview p,.preview ol,.preview ul{margin:0 0 6px}
+.preview .src{font-size:12px;color:var(--soft);margin-top:10px;border-top:1px solid var(--line);padding-top:8px}
+.preview table{min-width:0;font-size:12px}
+.preview td,.preview th{padding:5px 6px;font-size:12px}
+
+.form{padding:6px 16px 14px}
+.field{display:grid;grid-template-columns:260px 1fr;gap:16px;padding:12px 0;border-bottom:1px solid #EDEDF0;align-items:center}
+.field:last-child{border-bottom:none}
+.field label{font-weight:500}
+.field .help{font-size:12px;color:var(--soft);font-weight:400;display:block}
+.toggle{width:38px;height:22px;border-radius:11px;background:#CFCFD4;border:none;position:relative;cursor:pointer}
+.toggle::after{content:"";position:absolute;top:3px;left:3px;width:16px;height:16px;border-radius:50%;background:#fff;transition:left .15s}
+.toggle.on{background:var(--ink)}.toggle.on::after{left:19px}
+.ut{min-width:0}.ut td,.ut th{text-align:left}.ut thead th{background:#fff;text-align:left}
+
+.view{display:none}.view.active{display:block}
+.fab{position:fixed;right:20px;bottom:20px;background:#3DFF8A;color:#111;border:none;border-radius:999px;padding:13px 20px;font-weight:600;font-size:14px;box-shadow:0 4px 14px rgba(0,0,0,.2);cursor:pointer}
+.fab:hover{background:#2EE87A}
+.fab::before{content:"+";font-size:18px;margin-right:10px;vertical-align:-1px}
+.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,90px);background:var(--ink);color:#fff;padding:10px 16px;border-radius:6px;font-size:13px;transition:transform .2s;z-index:9}
+.toast.show{transform:translate(-50%,0)}
+.drop{border:1.5px dashed #BDBDC4;border-radius:6px;padding:22px;text-align:center;color:var(--soft);margin-bottom:28px}
+.drop b{color:var(--ink);display:block;margin-bottom:2px;font-weight:600}
+
+@media (max-width:900px){
+  .brand .app{display:none}nav{justify-content:flex-start}
+  .row{grid-template-columns:1fr}.acts{justify-content:flex-start}
+  .preview{grid-column:1}.field{grid-template-columns:1fr}.head{flex-direction:column}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+.brand{border:none;background:none;padding:0;cursor:pointer}
+.eyebrow{font-size:12px;font-weight:600;color:var(--ink);margin:0 0 2px}
+.sh{display:inline-block;font-size:19px;font-weight:500;margin:0 0 18px;padding-bottom:5px;border-bottom:2px solid var(--ink)}
+.empty{background:#fff;border:1px solid var(--line);border-top:3px solid var(--ink);border-radius:10px;padding:28px;text-align:center;color:var(--soft)}
+.saved{font-size:12px;color:var(--soft);align-self:center;transition:opacity .4s}
+.avbtn{border:none;padding:0;cursor:pointer}
+.menu{position:absolute;right:16px;top:44px;background:#fff;border:1px solid var(--line);border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,.12);min-width:230px;padding:6px;display:none;z-index:20}
+.menu.show{display:block}
+.menu .who{padding:8px 10px 10px;border-bottom:1px solid #EDEDF0;margin-bottom:4px}
+.menu .who b{display:block;font-weight:600}.menu .who span{font-size:12px;color:var(--soft)}
+.menu button{display:block;width:100%;text-align:left;border:none;background:none;padding:8px 10px;border-radius:6px;cursor:pointer}
+.menu button:hover{background:#F4F4F6}
+.scrim{position:fixed;inset:0;background:rgba(0,0,0,.25);display:none;align-items:center;justify-content:center;z-index:30;padding:16px}
+.scrim.show{display:flex}
+.dialog{background:#fff;border-radius:12px;border-top:3px solid var(--ink);max-width:440px;width:100%;padding:22px 24px;box-shadow:0 12px 40px rgba(0,0,0,.2)}
+.dialog h3{margin:0 0 8px;font-size:18px;font-weight:500}
+.dialog p{margin:0 0 18px;color:#444}
+.dialog .da{display:flex;gap:8px;justify-content:flex-end}
+.btn.primary{background:#3DFF8A;border-color:#111;color:#111}
+.btn.primary:hover{background:#2EE87A}
+.btn.danger{border:1px solid var(--red);color:var(--red)}
+.drop{border:1.5px dashed #BDBDC4;border-radius:8px;padding:26px;text-align:center;color:var(--soft);margin:0 0 18px}
+.drop b{display:block;color:var(--ink);font-weight:600}
+.skel{background:#fff;border:1px solid var(--line);border-top:3px solid #DDD;border-radius:10px;height:58px;margin-bottom:20px;position:relative;overflow:hidden}
+.skel::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(0,0,0,.04),transparent);animation:sh 1.1s infinite}
+@keyframes sh{from{transform:translateX(-100%)}to{transform:translateX(100%)}}
+footer{max-width:1120px;margin:0 auto;padding:24px 24px 90px;font-size:12px;color:var(--mute);border-top:1px solid #EDEDF0;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+main{padding-bottom:40px}
+html,body{overflow-x:hidden}
+
+/* Process map (swimlanes) */
+.mapcard{background:#fff;border:1px solid var(--line);border-top:3px solid var(--ink);border-radius:10px;overflow:hidden;margin-bottom:20px}
+.mapgrid{display:flex}
+.lanes{flex:none;width:170px;border-right:1px solid var(--line);background:#FBFBFC}
+.lanes .lh{height:40px;border-bottom:1px solid var(--line)}
+.lanes .ln{display:flex;flex-direction:column;justify-content:center;padding:0 14px;border-bottom:1px solid #EDEDF0;font-size:13px;font-weight:500}
+.lanes .ln small{font-weight:400;color:var(--mute);font-size:11px}
+.lanes .ln.none{color:var(--red)}
+.mapscroll{flex:1;overflow-x:auto;min-width:0}
+.canvas{position:relative}
+.canvas .lane{position:absolute;left:0;right:0;border-bottom:1px solid #EDEDF0}
+.canvas .lane.none{background:repeating-linear-gradient(135deg,#fff,#fff 8px,#FDF3F2 8px,#FDF3F2 16px)}
+.canvas .stage{position:absolute;top:0;height:40px;display:flex;align-items:center;gap:6px;padding-left:12px;font-size:12px;font-weight:600;border-bottom:1px solid var(--line);border-left:1px solid var(--line)}
+.canvas .stage i{width:8px;height:8px;display:inline-block}
+.canvas .band{position:absolute;bottom:0;border-left:1px solid #EDEDF0}
+.canvas .band.alt{background:rgba(0,0,0,.015)}
+.canvas svg{position:absolute;inset:0;pointer-events:none}
+.mbox{position:absolute;background:#fff;border:1.5px solid var(--ink);border-radius:8px;padding:6px 8px;font-size:11.5px;line-height:1.25;text-align:left;cursor:pointer;display:flex;flex-direction:column;justify-content:flex-start;gap:2px;overflow:hidden}
+.mbox .nm{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.mbox:hover{background:#F4F4F6}
+.mbox.sel{background:#F1F1F3;box-shadow:0 0 0 3px rgba(0,0,0,.08)}
+.mbox.gap{border-color:var(--red)}
+.mbox.none{border:1.5px dashed var(--red);color:var(--red)}
+.mbox .num{font-size:10px;color:var(--mute);font-weight:600}
+.mbox .warn{font-size:10px}
+.ghost{position:absolute;height:20px;border:1px dashed #AAA;border-radius:10px;font-size:10px;color:var(--mute);display:flex;align-items:center;justify-content:center;background:#fff}
+.mdetail{border-top:1px solid var(--line);padding:16px 18px;display:grid;grid-template-columns:1fr auto;gap:12px;align-items:start}
+.mdetail .rt{font-size:15px}
+.mlegend{display:flex;gap:18px;flex-wrap:wrap;font-size:12px;color:var(--soft);padding:10px 18px;border-top:1px solid var(--line)}
+.mlegend span{display:inline-flex;align-items:center;gap:6px}
+.mlegend i{display:inline-block;width:18px;height:12px;border-radius:3px}
+@media (max-width:900px){.lanes{width:110px}.lanes .ln{padding:0 8px;font-size:11.5px}.mdetail{grid-template-columns:1fr}}
+
+/* Export */
+.xopt{display:grid;gap:6px;margin:0 0 14px}
+.xopt label{display:flex;gap:10px;align-items:flex-start;padding:8px 10px;border:1px solid var(--line);border-radius:8px;cursor:pointer}
+.xopt label:has(input:checked){border-color:var(--ink);background:#F7F7F8}
+.xopt input{margin-top:3px;accent-color:#111}
+.xopt b{display:block;font-weight:600;font-size:13px}.xopt small{color:var(--soft);font-size:12px}
+.xh{font-size:12px;font-weight:600;color:var(--soft);margin:0 0 6px}
+.dialog{max-width:520px;max-height:92vh;overflow:auto}
+.fmtgrid{grid-template-columns:1fr 1fr}
+#printReport{display:none}
+@media print{
+  @page{size:landscape;margin:12mm}
+  body>*:not(#printReport){display:none!important}
+  #printReport{display:block;font-size:10.5px;color:#000}
+  #printReport h1{font-size:20px;font-weight:400;margin:0 0 2px}
+  #printReport h2{font-size:14px;font-weight:600;margin:16px 0 6px;padding-bottom:3px;border-bottom:1.5px solid #000;break-after:avoid}
+  #printReport .pm{color:#555;margin:0 0 10px}
+  #printReport table{width:100%;min-width:0;border-collapse:collapse}
+  #printReport th,#printReport td{border:1px solid #ccc;padding:4px 5px;text-align:left;vertical-align:top;font-size:10px}
+  #printReport thead th{background:#EDEDF0;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  #printReport tr{break-inside:avoid}
+  #printReport .pf{margin-top:12px;color:#777;font-size:9px}
+}
+
+/* language */
+.langs{padding:8px 10px 10px;border-bottom:1px solid #EDEDF0;margin-bottom:4px}
+.langs span{display:block;font-size:11px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;color:var(--mute);margin-bottom:6px}
+.lgrp{display:flex;gap:4px}
+.menu .lgrp button{width:auto;flex:1;text-align:center;padding:5px 0;border:1px solid var(--line);border-radius:999px;font-size:12px;font-weight:600}
+.menu .lgrp button[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
+.lang{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.3px;border:1px solid #CFCFD4;border-radius:3px;padding:0 5px;margin-left:6px;vertical-align:1px;color:#444}
+.xl{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0 12px}
+.xl div{background:#F7F7F8;border-radius:8px;padding:10px 12px;font-size:13px;line-height:1.45}
+.xl b{display:block;font-size:11px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;color:var(--mute);margin-bottom:4px}
+.xm{font-size:12.5px;color:var(--soft);margin:0 0 4px}
+.xm b{color:var(--ink);font-weight:600}
+.dialog.wide{max-width:640px}
+.gl{width:100%;border-collapse:collapse;font-size:12.5px;min-width:0}
+.gl th,.gl td{text-align:left;border-bottom:1px solid #EDEDF0;padding:5px 6px}
+.gl th{background:#fff;font-weight:600;color:var(--soft)}
+@media (max-width:640px){.xl{grid-template-columns:1fr}}
+.row>.chip{white-space:normal;overflow-wrap:anywhere;max-width:108px}
+
+.langsel{position:relative}
+#langBtn{display:flex;align-items:center;gap:6px;border:1px solid var(--line);background:#fff;border-radius:999px;padding:5px 11px;font-size:13px;font-weight:600;cursor:pointer;color:#111}
+#langBtn:hover{background:#F4F4F6}
+#langMenu{position:absolute;right:0;top:38px;background:#fff;border:1px solid var(--line);border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,.12);padding:6px;min-width:150px;display:none;z-index:25}
+#langMenu.show{display:block}
+#langMenu button{display:flex;align-items:center;gap:10px;justify-content:flex-start;width:100%;text-align:left;border:none;background:none;padding:8px 10px;border-radius:6px;cursor:pointer;font-size:14px}
+#langMenu button:hover{background:#F4F4F6}
+#langMenu button[aria-pressed="true"]{font-weight:600}
+#langMenu button[aria-pressed="true"]::after{content:"✓";margin-left:auto}
+.flag{flex:none;border-radius:2px;box-shadow:0 0 0 1px rgba(0,0,0,.14);display:block}
+#langFlag{display:flex}
+#langMenu .lc{flex:none;width:28px;text-align:center;font-size:11px;font-weight:700;letter-spacing:.4px;border:1px solid #CFCFD4;border-radius:4px;padding:1px 0;color:#444}
+#langMenu button[aria-pressed="true"] .lc{background:var(--ink);border-color:var(--ink);color:#fff}
+</style>
+</head>
+<body>
+
+<div class="top">
+  <button class="brand" id="home" aria-label="Go to Intake"><span class="client"><svg class="mark" viewBox="0 0 48 48" width="22" height="22" aria-hidden="true" fill="none" stroke-linecap="round" stroke-linejoin="round"><defs><clipPath id="ctb"><circle cx="24" cy="24" r="21"/></clipPath><filter id="ftb" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="1.1" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs><circle cx="24" cy="24" r="22.2" fill="#111" stroke="#4E5A53" stroke-width="1.4"/><g clip-path="url(#ctb)" stroke="#9DFFC4" stroke-opacity=".5" stroke-width=".4"><line x1="14" y1="5" x2="14" y2="43"/><line x1="24" y1="5" x2="24" y2="43"/><line x1="34" y1="5" x2="34" y2="43"/><line x1="5" y1="14" x2="43" y2="14"/><line x1="5" y1="24" x2="43" y2="24"/><line x1="5" y1="34" x2="43" y2="34"/><line x1="9" y1="23" x2="9" y2="25"/><line x1="11.5" y1="23" x2="11.5" y2="25"/><line x1="16.5" y1="23" x2="16.5" y2="25"/><line x1="19" y1="23" x2="19" y2="25"/><line x1="21.5" y1="23" x2="21.5" y2="25"/><line x1="26.5" y1="23" x2="26.5" y2="25"/><line x1="29" y1="23" x2="29" y2="25"/><line x1="31.5" y1="23" x2="31.5" y2="25"/><line x1="36.5" y1="23" x2="36.5" y2="25"/><line x1="39" y1="23" x2="39" y2="25"/></g><g stroke-width="3" filter="url(#ftb)"><path d="M11.50,24.00 L11.68,24.39 L11.86,24.77 L12.04,25.14 L12.21,25.50 L12.39,25.84 L12.57,26.17 L12.75,26.48 L12.93,26.78 L13.11,27.06 L13.29,27.32 L13.46,27.57 L13.64,27.81 L13.82,28.02 L14.00,28.23 L14.18,28.42 L14.36,28.59 L14.54,28.76 L14.71,28.91 L14.89,29.05 L15.07,29.17 L15.25,29.29 L15.43,29.39 L15.61,29.49 L15.79,29.58 L15.96,29.66 L16.14,29.73 L16.32,29.79 L16.50,29.85 L16.68,29.90 L16.86,29.95 L17.04,29.99 L17.21,30.03 L17.39,30.06 L17.57,30.08 L17.75,30.11 L17.93,30.13 L18.11,30.15 L18.29,30.16 L18.46,30.17 L18.64,30.18 L18.82,30.19 L19.00,30.19 L19.18,30.20 L19.36,30.20 L19.54,30.20 L19.71,30.20 L19.89,30.20 L20.07,30.19 L20.25,30.19 L20.43,30.18 L20.61,30.17 L20.79,30.16 L20.96,30.15 L21.14,30.14 L21.32,30.12 L21.50,30.10 L21.68,30.09 L21.86,30.07 L22.04,30.04 L22.21,30.02 L22.39,29.99 L22.57,29.96 L22.75,29.93 L22.93,29.89 L23.11,29.85 L23.29,29.81 L23.46,29.76 L23.64,29.71 L23.82,29.66 L24.00,29.60 L24.18,29.53 L24.36,29.46 L24.54,29.38 L24.71,29.29 L24.89,29.20 L25.07,29.09 L25.25,28.98 L25.43,28.86 L25.61,28.74 L25.79,28.60 L25.96,28.45 L26.14,28.29 L26.32,28.12 L26.50,27.93 L26.68,27.74 L26.86,27.53 L27.04,27.30 L27.21,27.07 L27.39,26.82 L27.57,26.56 L27.75,26.28 L27.93,25.99 L28.11,25.68 L28.29,25.36 L28.46,25.03 L28.64,24.68 L28.82,24.33 L29.00,23.96 L29.18,23.59 L29.36,23.20 L29.54,22.81 L29.71,22.43 L29.89,22.05 L30.07,21.67 L30.25,21.31 L30.43,20.96 L30.61,20.62 L30.79,20.29 L30.96,19.98 L31.14,19.69 L31.32,19.41 L31.50,19.15 L31.68,18.91 L31.86,18.70 L32.04,18.50 L32.21,18.33 L32.39,18.18 L32.57,18.06 L32.75,17.96 L32.93,17.88 L33.11,17.83 L33.29,17.80 L33.46,17.80 L33.64,17.83 L33.82,17.88 L34.00,17.96 L34.18,18.06 L34.36,18.18 L34.54,18.33 L34.71,18.50 L34.89,18.70 L35.07,18.91 L35.25,19.15 L35.43,19.41 L35.61,19.69 L35.79,19.98 L35.96,20.29 L36.14,20.62 L36.32,20.96 L36.50,21.31" stroke="#1F8A4C"/><path d="M11.50,24.00 L11.68,23.60 L11.86,23.21 L12.04,22.81 L12.21,22.43 L12.39,22.05 L12.57,21.67 L12.75,21.31 L12.93,20.96 L13.11,20.62 L13.29,20.29 L13.46,19.98 L13.64,19.69 L13.82,19.41 L14.00,19.15 L14.18,18.91 L14.36,18.70 L14.54,18.50 L14.71,18.33 L14.89,18.18 L15.07,18.06 L15.25,17.96 L15.43,17.88 L15.61,17.83 L15.79,17.80 L15.96,17.80 L16.14,17.83 L16.32,17.88 L16.50,17.96 L16.68,18.06 L16.86,18.18 L17.04,18.33 L17.21,18.50 L17.39,18.70 L17.57,18.91 L17.75,19.15 L17.93,19.41 L18.11,19.69 L18.29,19.98 L18.46,20.29 L18.64,20.62 L18.82,20.96 L19.00,21.31 L19.18,21.67 L19.36,22.05 L19.54,22.43 L19.71,22.81 L19.89,23.21 L20.07,23.60 L20.25,24.00 L20.43,24.40 L20.61,24.79 L20.79,25.19 L20.96,25.57 L21.14,25.95 L21.32,26.33 L21.50,26.69 L21.68,27.04 L21.86,27.38 L22.04,27.71 L22.21,28.02 L22.39,28.31 L22.57,28.59 L22.75,28.85 L22.93,29.09 L23.11,29.30 L23.29,29.50 L23.46,29.67 L23.64,29.82 L23.82,29.94 L24.00,30.04 L24.18,30.12 L24.36,30.17 L24.54,30.20 L24.71,30.20 L24.89,30.17 L25.07,30.12 L25.25,30.04 L25.43,29.94 L25.61,29.82 L25.79,29.67 L25.96,29.50 L26.14,29.30 L26.32,29.09 L26.50,28.85 L26.68,28.59 L26.86,28.31 L27.04,28.02 L27.21,27.71 L27.39,27.38 L27.57,27.04 L27.75,26.69 L27.93,26.33 L28.11,25.95 L28.29,25.57 L28.46,25.19 L28.64,24.79 L28.82,24.40 L29.00,24.00 L29.18,23.60 L29.36,23.21 L29.54,22.81 L29.71,22.43 L29.89,22.05 L30.07,21.67 L30.25,21.31 L30.43,20.96 L30.61,20.62 L30.79,20.29 L30.96,19.98 L31.14,19.69 L31.32,19.41 L31.50,19.15 L31.68,18.91 L31.86,18.70 L32.04,18.50 L32.21,18.33 L32.39,18.18 L32.57,18.06 L32.75,17.96 L32.93,17.88 L33.11,17.83 L33.29,17.80 L33.46,17.80 L33.64,17.83 L33.82,17.88 L34.00,17.96 L34.18,18.06 L34.36,18.18 L34.54,18.33 L34.71,18.50 L34.89,18.70 L35.07,18.91 L35.25,19.15 L35.43,19.41 L35.61,19.69 L35.79,19.98 L35.96,20.29 L36.14,20.62 L36.32,20.96 L36.50,21.31" stroke="#3DFF8A"/></g></svg>InPhase Labs</span><span class="app">Activity Mapper</span></button>
+  <nav id="nav">
+    <button data-v="intake" aria-current="page">Intake</button>
+    <button data-v="output">Process output</button>
+    <button data-v="taxonomy">Taxonomy</button>
+    <button data-v="gaps">Gaps</button>
+    <button data-v="docs">New documentation</button>
+    <span class="divider" data-admin></span>
+    <button data-v="admin" data-admin>Admin</button>
+    <button data-v="reviews" class="mine">My reviews</button>
+  </nav>
+  <div class="right">
+    <div class="langsel"><button id="langBtn" aria-haspopup="true" aria-expanded="false" aria-label="Language"><svg viewBox="0 0 16 16" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><circle cx="8" cy="8" r="6.3"/><path d="M1.7 8h12.6M8 1.7c1.9 2 1.9 10.6 0 12.6M8 1.7c-1.9 2-1.9 10.6 0 12.6"/></svg><span id="langCode">EN</span></button>
+      <div class="lgrp" id="langMenu" role="menu"><button data-lang="en" aria-pressed="true" role="menuitemradio"><span class="lc">EN</span><span>English</span></button><button data-lang="de" aria-pressed="false" role="menuitemradio"><span class="lc">DE</span><span>Deutsch</span></button><button data-lang="fr" aria-pressed="false" role="menuitemradio"><span class="lc">FR</span><span>Français</span></button><button data-lang="it" aria-pressed="false" role="menuitemradio"><span class="lc">IT</span><span>Italiano</span></button></div></div>
+    <button class="avbtn avatar" id="avatar" aria-haspopup="true" aria-expanded="false">CA</button>
+  </div>
+  <div class="menu" id="menu" role="menu">
+    <div class="who"><b>Carlos Alvarenga</b><span id="roleLbl">Project lead · Admin</span></div>
+    <button data-v="admin" data-admin role="menuitem">Admin</button>
+    <button id="exportAll" role="menuitem">Export</button>
+    <button id="viewAs" role="menuitem">View as reviewer</button>
+    <button id="signout" role="menuitem">Sign out</button>
+  </div>
+</div>
+
+<main>
+
+<!-- INTAKE -->
+<section class="view active" id="intake">
+  <div class="head">
+    <div><h1>Intake</h1><p class="sub">Documents read for this project, and the documents they link to. Sample output from the Outside Counsel Engagement section of a fictional Legal Operations Playbook; people are shown by role.</p></div>
+    <div class="seg"><button class="on">By source</button><button>By status</button></div>
+  </div>
+  <div class="filters">
+    <select><option>All sources</option><option>Uploaded</option><option>Linked</option></select>
+    <select><option>All statuses</option><option>Read</option><option>No access</option><option>Skipped</option></select>
+    <button class="btn" data-all="open">Open all</button><button class="btn" data-all="close">Collapse all</button>
+    <button class="btn" data-export="all">Export</button>
+  </div>
+  <p class="eyebrow">Sources</p><h2 class="sh">Documents and links</h2>
+  <div id="intakeList"></div>
+</section>
+
+<!-- OUTPUT -->
+<section class="view" id="output">
+  <div class="head">
+    <div><h1>Process output</h1><p class="sub">The as-is activity map for Outside Counsel Engagement: who does each step today, according to the playbook.</p></div>
+    <div class="seg" data-seg="output"><button class="on" data-g="process">List</button><button data-g="map">Process map</button><button data-g="role">Role grid</button></div>
+  </div>
+  <div class="filters">
+    <select><option>All activities</option><option>Flagged only</option></select>
+    <select><option>All stages</option><option>Engagement</option><option>Ongoing</option><option>Annual</option><option>Closing</option></select>
+    <button class="btn" data-all="open">Open all</button><button class="btn" data-all="close">Collapse all</button>
+    <button class="btn" data-export="activities">Export</button>
+  </div>
+  <p class="eyebrow">Outside counsel engagement</p><h2 class="sh">Activities</h2>
+  <div id="byProcess"></div>
+  <div id="byRole" style="display:none"></div>
+  <div id="byMap" style="display:none"></div>
+</section>
+
+<!-- TAXONOMY -->
+<section class="view" id="taxonomy">
+  <div class="head">
+    <div><h1>Taxonomy</h1><p class="sub">The playbook's 20 sections, regrouped into proposed Level 1 areas. Outside Counsel Engagement is broken down to Level 3; other sections are placed by title only until analyzed.</p></div>
+    <div class="seg" data-seg="tax"><button class="on" data-g="prop">Proposed</button><button data-g="orig">As in playbook</button></div>
+  </div>
+  <div class="filters">
+    <select><option>All Level 1 areas</option></select>
+    <select><option>All sections</option><option>Analyzed</option><option>Title only</option><option>Flagged</option></select>
+    <button class="btn" data-all="open">Open all</button><button class="btn" data-all="close">Collapse all</button>
+    <button class="btn" data-export="taxonomy">Export</button>
+  </div>
+  <p class="eyebrow">Proposed structure</p><h2 class="sh">Process areas</h2>
+  <div id="taxList"></div>
+</section>
+
+<!-- GAPS -->
+<section class="view" id="gaps">
+  <div class="head">
+    <div><h1>Gaps</h1><p class="sub">Where the documented process is missing an owner, a rule, a control, or a step. Each gap links to the passage it comes from.</p></div>
+    <div class="seg"><button class="on">By severity</button><button>By type</button></div>
+  </div>
+  <div class="filters">
+    <select><option>All types</option><option>Ownership</option><option>Control</option><option>Missing step</option><option>Policy</option><option>Documentation</option></select>
+    <select id="gapStatus"><option value="open">Open</option><option value="accepted">Accepted</option><option value="all">All</option></select>
+    <button class="btn" data-all="open">Open all</button><button class="btn" data-all="close">Collapse all</button>
+    <button class="btn" data-export="gaps">Export</button>
+  </div>
+  <p class="eyebrow">Outside counsel engagement</p><h2 class="sh">Gaps by priority</h2>
+  <div id="gapList"></div>
+</section>
+
+<!-- NEW DOCUMENTATION -->
+<section class="view" id="docs">
+  <div class="head">
+    <div><h1>New documentation</h1><p class="sub">Drafts generated to close the gaps. Each needs the process owner's review before use.</p></div>
+    <div class="seg"><button class="on">By status</button><button>By gap</button></div>
+  </div>
+  <div class="filters">
+    <select><option>All statuses</option><option>Draft</option><option>Decision needed</option><option>Approved</option></select>
+    <button class="btn" data-all="open">Open all</button><button class="btn" data-all="close">Collapse all</button>
+    <button class="btn" data-export="drafts">Export</button>
+  </div>
+  <p class="eyebrow">Drafts</p><h2 class="sh">Documents by status</h2>
+  <div id="docList"></div>
+</section>
+
+<!-- ADMIN -->
+<section class="view" id="admin">
+  <div class="head"><div><h1>Admin</h1><p class="sub">Project settings, people and access, and how the analysis runs.</p></div></div>
+  <p class="eyebrow">Settings</p><h2 class="sh">Project settings</h2>
+  <div id="adminList"></div>
+</section>
+
+<!-- MY REVIEWS -->
+<section class="view" id="reviews">
+  <div class="head"><div><h1>My reviews</h1><p class="sub">Drafts and gaps waiting for your decision.</p></div></div>
+  <p class="eyebrow">Assigned to you</p><h2 class="sh">Waiting for review</h2>
+  <div id="reviewList"></div>
+</section>
+
+</main>
+<footer><span>© 2026 Carlos Alvarenga. All rights reserved. · InPhase Labs · Activity Mapper</span><span>Mockup v0.8.3 · build 2026-10-05</span></footer>
+<div id="printReport" aria-hidden="true"></div>
+<div class="scrim" id="scrim"><div class="dialog" role="dialog" aria-modal="true" aria-labelledby="dlgT"><h3 id="dlgT"></h3><div id="dlgB"></div><div class="da" id="dlgA"></div></div></div>
+
+<button class="fab" id="fab">Add documents</button>
+
+<script>
+const $ = s => document.querySelector(s);
+const accepted = new Set();
+const toast = m => { const t=$("#toast"); t.textContent=m; t.classList.add("show"); clearTimeout(t._h); t._h=setTimeout(()=>t.classList.remove("show"),2400); };
+const card = (title, meta, body, open=false) =>
+  `<div class="card ${open?"open":""}"><button class="ch"><span class="chev">›</span><span class="title">${title}</span><span class="meta">${meta}</span></button><div class="body">${body}</div></div>`;
+const SRC = "Legal Operations Playbook, Outside Counsel Engagement";
+
+/* ===== INTAKE ===== */
+const intake = [
+ {g:"Uploaded", items:[
+  {st:["g","Read"], n:"Legal Operations Playbook", m:"Word · 18 pages · Legal Operations", i:"20 sections in table of contents. Outside Counsel Engagement analyzed in full; other sections placed by title only."}]},
+ {g:"Linked from the playbook", items:[
+  {st:["a","No access"], n:"Approved panel list (Preferred firms sheet)", m:"Spreadsheet · linked twice under two names", i:"Needed to check which firms are on the panel and who maintains it", f:1},
+  {st:["a","No access"], n:"Counsel request form", m:"Online form", i:"Shows what the matter lead submits", f:1},
+  {st:["a","No access"], n:"Engagement letter template", m:"Word template", i:"Standard terms sent to firms", f:1},
+  {st:["a","No access"], n:"Outside counsel billing guidelines", m:"PDF", i:"May define what invoices can include", f:1},
+  {st:["a","No access"], n:"E-billing setup checklist", m:"Document", i:"Steps to add a firm and matter to e-billing", f:1},
+  {st:["a","No access"], n:"Signed engagement letters folder", m:"Shared folder", i:"Where signed letters are saved", f:1},
+  {st:["k","Skipped"], n:"Public law firm directory", m:"External website", i:"Public lookup tool, not a process document"}]},
+ {g:"Multilingual examples (illustrative)", items:[
+  {st:["g","Read"], x:"de", n:"Leitfaden Rechnungsprüfung externe Kanzleien", m:"Word · 6 pages · Basel", i:"Deutsch (Schweiz) · translated for analysis · 4 activities found"},
+  {st:["g","Read"], x:"fr", n:"Directive sur l'archivage des contrats", m:"PDF · 9 pages · Switzerland", i:"Français (Suisse) · translated for analysis · 3 activities found"},
+  {st:["g","Read"], x:"it", n:"Procedura per la gestione delle richieste legali", m:"Word · 5 pages · Switzerland", i:"Italiano (Svizzera) · translated for analysis · matched to an existing process"}]}
+];
+$("#intakeList").innerHTML = intake.map((g,gi)=>card(g.g, `${g.items.length} ${g.items.length===1?"item":"items"}`, g.items.map(d=>`
+  <div class="row ${d.f?"flagA":""}"><span class="chip ${d.st[0]}">${d.st[1]}</span>
+  <div><div class="rt">${d.n}${d.x?`<span class="lang">${d.x.toUpperCase()}</span>`:""}</div><div class="rm">${d.m}</div><div class="ri">${d.i}</div></div>
+  <div class="acts">${d.x?`<button class="btn" data-xl="${d.x}">View extraction</button>`:d.st[1]==="Read"?'<button class="btn" data-toast="Opening extracted text and sections">View extraction</button><button class="btn">Replace</button>':d.st[1]==="No access"?'<button class="btn" data-toast="Request sent to document owner (mockup)">Request access</button><button class="btn">Upload copy</button>':'<button class="btn">Include</button>'}</div></div>`).join(""), true)).join("");
+
+/* ===== ACTIVITIES ===== */
+const roles = [["Matter lead","In-house attorney"],["Legal Ops coordinator","Legal Operations"],["E-billing analysts","2 people"],["Department head","Approver"],["Procurement","Vendor setup"],["General Counsel","Leadership"],["Outside firm","External"]];
+// cells: o owns, c contributes, . none
+const acts = [
+ {st:"Engagement", n:"Submit request to engage outside counsel", cells:"o......", ev:"Matter lead submits the counsel request form with scope and budget"},
+ {st:"Engagement", n:"Check the firm is on the approved panel", cells:"co.....", ev:"Legal Ops checks the firm against the Preferred firms sheet", gap:"G10"},
+ {st:"Engagement", n:"Run a conflict check with the firm", cells:"o.....c", ev:"The firm confirms there are no conflicts before work starts"},
+ {st:"Engagement", n:"Agree rates and a budget estimate", cells:"o.c...c", ev:"Rates are agreed with the firm and a budget estimate is attached"},
+ {st:"Engagement", n:"Approve engagements over the budget threshold", cells:"c..o...", ev:"Engagements over $100,000 need department head approval"},
+ {st:"Engagement", n:"Sign the engagement letter", cells:"o.....c", ev:"The engagement letter must be signed within 30 days of the request", gap:"G2"},
+ {st:"Engagement", n:"Set up the firm and matter in e-billing", cells:".c..o.c", ev:"Procurement creates the vendor; Legal Ops adds the matter to e-billing"},
+ {st:"Ongoing", n:"Review and approve monthly invoices", cells:"c.o....", ev:"Analysts review invoices against the billing guidelines", gap:"G1"},
+ {st:"Ongoing", n:"Track spend against budget", cells:".o.....", ev:"Legal Ops tracks spend and flags overruns", gap:"G3"},
+ {st:"Ongoing", n:"Approve budget increases", cells:"c..o...", ev:"Increases are discussed with the department head", gap:"G7"},
+ {st:"Ongoing", n:"Quarterly spend report to the General Counsel", cells:"..o..c.", ev:"Send the quarterly outside counsel spend report to the GC", gap:"G1"},
+ {st:"Ongoing", n:"Change firms partway through a matter", cells:".......", ev:"Not described in the playbook", gap:"G12"},
+ {st:"Annual", n:"Review panel firms", cells:".o..c..", ev:"Review the panel firms once a year", gap:"G6"},
+ {st:"Annual", n:"Request volume discounts", cells:".o....c", ev:"We only ask for discounts on the big matters… it isn't written down anywhere", gap:"G5"},
+ {st:"Annual", n:"Calculate year-end accruals", cells:"..o....", ev:"Analysts calculate accruals for open matters at year end"},
+ {st:"Closing", n:"Close the matter and collect the final invoice", cells:"oc....c", ev:"Final invoices must be received within 30 days of matter close", gap:"G2"}
+];
+const stages = ["Engagement","Ongoing","Annual","Closing"];
+const stageCol = {Engagement:"#0B41CD",Ongoing:"#29A36A",Annual:"#B7791F",Closing:"#8E44AD"};
+
+function renderOutput(){
+  $("#byProcess").innerHTML = stages.map((s,si)=>{
+    const a = acts.filter(x=>x.st===s);
+    const fl = a.filter(x=>x.gap).length;
+    return card(s, `${a.length} activities${fl?` · ${fl} with gaps`:""}`, a.map(x=>{
+      const owners = [...x.cells].map((c,i)=>c==="o"?roles[i][0]:null).filter(Boolean);
+      const contrib = [...x.cells].map((c,i)=>c==="c"?roles[i][0]:null).filter(Boolean);
+      return `<div class="row ${x.gap?"flag":""}"><span class="chip ${owners.length?"d":"r"}">${owners.length?"Owner set":"No owner"}</span>
+      <div><div class="rt">${x.gap?'<span class="warn">▲</span>':""}${x.n}</div>
+      <div class="rm">Owner: ${owners.join(", ")||"none named"}${contrib.length?` · Involved: ${contrib.join(", ")}`:""}</div>
+      <div class="ri">“${x.ev}”</div>
+      <div class="crumb"><i class="sq" style="background:${stageCol[x.st]}"></i>Spend and vendors › <i>Outside counsel engagement</i> › <b>${x.st}</b></div>
+      ${x.gap?`<div class="crumb"><span class="warn" style="margin:0">Gap ${x.gap.slice(1)}:</span> ${gaps.find(g=>g.id===x.gap).t}</div>`:""}</div>
+      <div class="acts"><button class="btn ok" data-done>Confirm</button><button class="btn">Reassign</button>${x.gap?`<button class="btn" data-gap="${x.gap}">View gap</button>`:""}</div></div>`}).join(""), true);
+  }).join("");
+
+  $("#byRole").innerHTML = `<div class="matrix"><table><thead><tr><th>Activity</th>${roles.map(r=>`<th>${r[0]}<small>${r[1]}</small></th>`).join("")}</tr></thead><tbody>${
+    stages.map(s=>`<tr><th colspan="${roles.length+1}" style="background:#FBFBFC;font-size:12px;color:#555">${s}</th></tr>`+acts.filter(a=>a.st===s).map(a=>`<tr><th>${a.gap?'<span class="warn">▲</span>':""}${a.n}</th>${[...a.cells].map(c=>`<td>${c==="o"?'<i class="dot o"></i>':c==="c"?'<i class="dot c"></i>':""}</td>`).join("")}</tr>`).join("")).join("")
+  }</tbody></table><div class="legend"><span><i class="dot o"></i>Owns</span><span><i class="dot c"></i>Involved</span><span><span class="warn">▲</span>Has a gap</span></div></div>`;
+}
+
+/* ===== GAPS ===== */
+const gaps = [
+ {id:"G1", sev:"High", type:"Ownership", t:"No single accountable owner for invoice review, spend reporting and accruals",
+  d:"Two e-billing analysts share invoice review, the quarterly spend report to the General Counsel and year-end accruals. Nobody is named as accountable, so it is unclear who signs off or who is answerable if something is missed.",
+  q:"Invoices go to the two analysts… the analysts prepare the quarterly report and accruals",
+  fix:"Name one accountable owner and one backup for each activity.", doc:"D1"},
+ {id:"G2", sev:"High", type:"Control", t:"No tracking or escalation for the two 30-day deadlines",
+  d:"Engagement letters must be signed within 30 days of the request, and final invoices must arrive within 30 days of matter close. The playbook gives no reminder, no check that the deadline was met, and no escalation path. Work can start without signed terms, and late invoices fall outside the year's accruals.",
+  q:"Must be signed within 30 days of the request… final invoices must be received within 30 days of matter close",
+  fix:"Add deadline dates to the matter record, a reminder at day 20, and escalation to the Legal Ops lead at day 25.", doc:"D2"},
+ {id:"G3", sev:"High", type:"Ownership", t:"Budget overruns are flagged, but nobody has to act on them",
+  d:"Legal Ops flags matters that go over budget. The playbook doesn't say at what point, who is told, or what they must do next, so overruns can keep growing.",
+  q:"Legal Ops tracks spend and flags overruns",
+  fix:"Set an overrun threshold (for example 10%), name who is notified, and require a revised budget or approval.", doc:"D3"},
+ {id:"G4", sev:"Medium", type:"Resilience", t:"Process depends on named individuals and one firm contact",
+  d:"Invoice review is assigned to two people by name, and the relationship with each firm runs through one named partner. There is no backup if either person is unavailable or leaves.",
+  q:"Responsible: [two named analysts]… Firm contact: [named partner]",
+  fix:"Assign by role, use a shared mailbox for firm correspondence, and document a backup.", doc:"D1"},
+ {id:"G5", sev:"Medium", type:"Policy", t:"Discount rule is unwritten and applied inconsistently",
+  d:"Volume discounts are requested only on large matters, and the rule isn't written down. Similar matters can end up on different terms.",
+  q:"We only ask for discounts on the big matters… it isn't written down anywhere",
+  fix:"Leadership decision needed: set a clear rule for when discounts are requested, then document it.", doc:"D4"},
+ {id:"G6", sev:"Medium", type:"Missing step", t:"Annual panel review method is not described",
+  d:"The review is mentioned, but not what is assessed (cost, quality, diversity), who takes part, or how firms join or leave the panel.",
+  q:"Review the panel firms once a year",
+  fix:"Document review criteria, inputs, and the decision step.", doc:"D5"},
+ {id:"G7", sev:"Medium", type:"Missing step", t:"Budget increases have no approval threshold",
+  d:"Increases are discussed with the department head, but there is no amount above which formal approval is required or recorded.",
+  q:"Increases are discussed with the department head",
+  fix:"Set an approval threshold and record approvals on the matter.", doc:"D3"},
+ {id:"G8", sev:"Medium", type:"Structure", t:"The process is split across playbook sections",
+  d:"Billing guidelines sit under Finance, while engagement sits under Operations. Someone following one section may miss the other.",
+  q:"Table of contents: Finance › Billing Guidelines; Operations › Outside Counsel Engagement",
+  fix:"Keep all engagement and billing steps under one process in the taxonomy (see Taxonomy tab)."},
+ {id:"G12", sev:"Medium", type:"Missing step", t:"No step for changing firms partway through a matter",
+  d:"The playbook covers new engagements and closing only. Moving a matter to a new firm needs a conflict check, new terms and a budget split, and nothing triggers those steps.",
+  q:"Not described in the playbook",
+  fix:"Add a change-of-firm step, or include it in the annual panel review.", doc:"D5"},
+ {id:"G9", sev:"Low", type:"Documentation", t:"Six linked resources could not be checked",
+  d:"The panel list, forms, templates, guidelines and folders are only linked. The analysis can't confirm what they contain or whether they match the playbook.",
+  q:"Links to shared folders, forms and spreadsheets",
+  fix:"Upload copies or grant read access."},
+ {id:"G10", sev:"Low", type:"Documentation", t:"One panel list, two names",
+  d:"The same spreadsheet is called the approved panel list in one place and the Preferred firms sheet in another.",
+  q:"Check the approved panel list… see the Preferred firms sheet (same link)",
+  fix:"Use one name throughout."},
+ {id:"G11", sev:"Low", type:"Policy", t:"Non-panel firms are allowed in urgent cases, but approval is unclear",
+  d:"The playbook allows a non-panel firm when a matter is urgent, but doesn't say who decides or whether the normal checks still apply.",
+  q:"In urgent cases a non-panel firm may be used",
+  fix:"State who approves an urgent exception and which checks still apply."}
+];
+const sevC = {High:"r",Medium:"a",Low:"k"};
+function renderGaps(){
+  const f = ($("#gapStatus")||{}).value||"open";
+  const show = x => f==="all" || (f==="open" ? !accepted.has(x.id) : accepted.has(x.id));
+  const html = ["High","Medium","Low"].map((s,si)=>{
+    const g = gaps.filter(x=>x.sev===s && show(x));
+    if(!g.length) return "";
+    return card(`${s} priority`, `${g.length} gaps`, g.map(x=>`
+      <div class="row ${s==="High"?"flag":s==="Medium"?"flagA":""}" id="gap-${x.id}" data-gid="${x.id}">${accepted.has(x.id)?'<span class="chip g">Accepted</span>':`<span class="chip ${sevC[s]}">${x.type}</span>`}
+      <div><div class="rt">Gap ${x.id.slice(1)}: ${x.t}</div>
+      <div class="rm" style="max-width:72ch">${x.d}</div>
+      <div class="ev">“${x.q}”<cite>${SRC}</cite></div>
+      <div class="fix"><b>Suggested fix:</b> ${x.fix}</div></div>
+      <div class="acts">${accepted.has(x.id)?"":'<button class="btn ok" data-done>Accept</button>'}${x.doc?`<button class="btn" data-draft="${x.doc}">View draft</button>`:""}<button class="btn del">Dismiss</button></div></div>`).join(""), si<2);
+  }).join("");
+  $("#gapList").innerHTML = html || `<div class="empty">${f==="accepted"?"No accepted gaps yet. Accept a gap to track it here.":"No open gaps. Every gap has been accepted or dismissed."}</div>`;
+  applyState();
+}
+
+/* ===== TAXONOMY ===== */
+const taxProp = [
+ {l1:"Spend and vendors", c:"#0B41CD", l2:[
+  {n:"Outside counsel engagement", st:"a", l3:[
+   {n:"Request and approval", a:5, ev:"g"},
+   {n:"Engagement letter", a:2, ev:"g", flag:"30-day deadline has no control"},
+   {n:"Billing and invoice review", a:3, ev:"a", flag:"No accountable owner for review and reporting"},
+   {n:"Budget tracking", a:3, ev:"a", flag:"Overrun response not described"},
+   {n:"Panel and discounts", a:2, ev:"a", flag:"Discount rule unwritten"},
+   {n:"Matter closing", a:1, ev:"g", flag:"30-day deadline has no control"}]},
+  {n:"Legal technology contracts", st:"t"},{n:"Expert witnesses", st:"t"},
+  {n:"Billing guidelines", st:"t", flag:"Belongs with Outside counsel engagement; currently listed under Finance"}]},
+ {l1:"Matter management", c:"#B42318", l2:[
+  {n:"Matter intake", st:"t"},{n:"Legal holds", st:"t"},{n:"Litigation reporting", st:"t"},
+  {n:"Settlement approvals", st:"t", flag:"Approval limits not clear from title"}]},
+ {l1:"Compliance and risk", c:"#29A36A", l2:[
+  {n:"Conflicts register", st:"t"},{n:"Policy attestations", st:"t"},{n:"Records retention", st:"t"},
+  {n:"Third-party screening", st:"t", flag:"May belong under procurement"}]},
+ {l1:"Knowledge and templates", c:"#B7791F", l2:[
+  {n:"Template library", st:"t"},{n:"Clause bank", st:"t"},{n:"Training calendar", st:"t"}]},
+ {l1:"Team operations", c:"#8E44AD", l2:[
+  {n:"Onboarding", st:"t"},{n:"Department budget", st:"t"},{n:"Team meetings", st:"t"}]},
+ {l1:"Communications", c:"#555", l2:[{n:"Newsletter", st:"t"},{n:"Intranet page", st:"t"}]}
+];
+const taxOrig = [
+ {l1:"Finance", items:["Billing Guidelines","Department Budget","Legal Technology Contracts","Expert Witnesses"]},
+ {l1:"Compliance", items:["Conflicts Register","Policy Attestations","Records Retention","Third-Party Screening","Settlement Approvals"]},
+ {l1:"Knowledge", items:["Template Library","Clause Bank","Training Calendar"]},
+ {l1:"Communications", items:["Newsletter","Intranet Page","Litigation Reporting"]},
+ {l1:"Operations", items:["Matter Intake","Legal Holds","Onboarding","Team Meetings","Outside Counsel Engagement"]}
+];
+function renderTax(mode){
+  if(mode==="orig"){
+    $("#taxList").innerHTML = taxOrig.map((a,i)=>card(a.l1, `${a.items.length} sections`, a.items.map(n=>`<div class="row"><span class="chip k">Section</span><div class="rt">${n}</div><span></span></div>`).join(""), i===4)).join("");
+    return;
+  }
+  $("#taxList").innerHTML = taxProp.map((a,i)=>{
+    const fl = a.l2.filter(b=>b.flag||(b.l3&&b.l3.some(c=>c.flag))).length;
+    return card(`<span style="display:inline-block;width:10px;height:10px;background:${a.c};margin-right:10px;vertical-align:2px"></span>${a.l1}`, `Level 1 · ${a.l2.length} processes${fl?` · ${fl} flagged`:""}`,
+      a.l2.map(b=> b.l3
+        ? `<div class="subhead">${b.n}<span>Level 2 · analyzed in full</span></div>` + b.l3.map(c=>`
+          <div class="row ${c.flag?"flag":""}"><span class="chip ${c.ev}">${c.ev==="g"?"Documented":"Partial"}</span>
+          <div><div class="rt">${c.flag?'<span class="warn">▲</span>':""}${c.n}</div><div class="rm">Level 3 · ${c.a} ${c.a===1?"activity":"activities"} · Source: ${SRC}</div>${c.flag?`<div class="ri">${c.flag}</div>`:""}</div>
+          <div class="acts"><button class="btn ok" data-done>Approve</button><button class="btn">Rename</button><button class="btn">Move</button></div></div>`).join("")
+        : `<div class="row ${b.flag?"flagA":""}"><span class="chip k">Title only</span>
+          <div><div class="rt">${b.n}</div><div class="rm">Level 2 · placed from table of contents</div>${b.note?`<div class="ri">${b.note}</div>`:""}${b.flag?`<div class="ri" style="color:var(--amber)">${b.flag}</div>`:""}</div>
+          <div class="acts"><button class="btn" data-toast="Queued for full analysis (mockup)">Analyze section</button><button class="btn">Move</button></div></div>`
+      ).join(""), i<2);
+  }).join("");
+}
+
+/* ===== NEW DOCUMENTATION ===== */
+const drafts = [
+ {id:"D1", s:["k","Draft"], n:"Outside counsel engagement: roles and responsibilities (RACI)", gaps:"Gaps 1 and 4", body:`
+  <h4>Outside counsel engagement: roles and responsibilities</h4>
+  <p>Draft assigning one accountable owner per activity, by role rather than by name.</p>
+  <table><thead><tr><th>Activity</th><th>Responsible</th><th>Accountable</th><th>Backup</th></tr></thead><tbody>
+  <tr><td>Panel check and e-billing setup</td><td>Legal Ops coordinator</td><td>Legal Ops lead</td><td>E-billing analyst A</td></tr>
+  <tr><td>Engagement letter</td><td>Matter lead</td><td>Department head</td><td>Legal Ops coordinator</td></tr>
+  <tr><td>Monthly invoice review</td><td>E-billing analyst A</td><td>Legal Ops lead</td><td>E-billing analyst B</td></tr>
+  <tr><td>Quarterly spend report</td><td>E-billing analyst B</td><td>Legal Ops lead</td><td>E-billing analyst A</td></tr>
+  <tr><td>Year-end accruals</td><td>E-billing analyst A</td><td>Legal Ops lead</td><td>E-billing analyst B</td></tr></tbody></table>
+  <p>Firm correspondence moves to a shared team mailbox.</p>`},
+ {id:"D2", s:["k","Draft"], n:"30-day deadlines: tracking and escalation", gaps:"Gap 2", body:`
+  <h4>30-day deadlines</h4>
+  <h5>Applies to</h5><p>Signing the engagement letter after a request, and receiving the final invoice after a matter closes.</p>
+  <h5>Steps</h5><ol><li>On request or closing, record the deadline date on the matter.</li><li>Day 20: automatic reminder to the responsible person.</li><li>Day 25: escalate to the Legal Ops lead if not complete.</li><li>On completion, record the date and file the document.</li></ol>
+  <h5>Before signature</h5><p>No work starts and no invoices are approved until the engagement letter is signed.</p>`},
+ {id:"D3", s:["k","Draft"], n:"Budget overruns and increases", gaps:"Gaps 3 and 7", body:`
+  <h4>Budget overruns and increases</h4>
+  <ol><li>When spend reaches 90% of budget, the matter lead is notified.</li><li>Above 110%, invoices are held until a revised budget is submitted.</li><li>Increases under $25,000 are approved by the matter lead; larger increases by the department head.</li><li>Every approval is recorded on the matter.</li><li>Overruns are listed in the quarterly spend report.</li></ol>`},
+ {id:"D4", s:["a","Decision needed"], n:"Volume discounts: decision request", gaps:"Gap 5", body:`
+  <h4>Decision request: volume discounts</h4>
+  <p>Today, discounts are requested only on some large matters, and the rule isn't written down. Leadership is asked to choose one option, which will then be documented:</p>
+  <ol><li>Request a discount from every panel firm above an annual spend level.</li><li>Request discounts on matters above a set budget.</li><li>Negotiate discounts once a year as part of the panel review.</li></ol>`},
+ {id:"D5", s:["k","Draft"], n:"Annual panel review procedure", gaps:"Gaps 6 and 12", body:`
+  <h4>Annual panel review</h4>
+  <ol><li>Export a year of spend and matters by firm from e-billing.</li><li>Collect a short quality rating from each matter lead.</li><li>Compare rates, outcomes and diversity commitments across firms.</li><li>Agree additions and removals with the General Counsel.</li><li>Record any mid-matter firm changes from the year and confirm conflict checks were done.</li></ol>`},
+ {id:"D6", s:["g","Approved"], n:"Approved panel list: naming and fields", gaps:"Gap 10", reviewer:"Sample approval", body:`
+  <h4>Approved panel list</h4><p>One name throughout: Approved Panel List. Required fields: firm, practice areas, agreed rates, discount terms, relationship owner, last review date.</p>`}
+];
+function renderDocs(){
+  const groups = [["Draft","Drafts to review"],["Decision needed","Decisions needed"],["Approved","Approved"]];
+  $("#docList").innerHTML = groups.map(([k,label],gi)=>{
+    const ds = drafts.filter(d=>d.s[1]===k);
+    return card(label, `${ds.length} ${ds.length===1?"document":"documents"}`, ds.map(d=>`
+      <div class="row" id="doc-${d.id}"><span class="chip ${d.s[0]}">${d.s[1]}</span>
+      <div><div class="rt">${d.n}</div><div class="rm">Generated Oct 5, 2026 · Closes ${d.gaps}</div><div class="ri">Based on ${SRC}${d.reviewer?` · ${d.reviewer}`:""}</div></div>
+      <div class="acts">${k!=="Approved"?'<button class="btn ok" data-done>Approve</button>':""}<button class="btn" data-preview="${d.id}">Open draft</button><button class="btn">Edit</button>${k==="Approved"?'<button class="btn" data-export-draft="${d.id}">Export</button>':'<button class="btn del">Discard</button>'}</div>
+      <div class="preview" id="pv-${d.id}">${d.body}<div class="src">Drafted from ${SRC}. Needs confirmation by the process owner.</div></div></div>`).join(""), gi<2);
+  }).join("");
+}
+
+/* ===== ADMIN ===== */
+function renderAdmin(){
+  const tg = on=>`<button class="toggle ${on?"on":""}" aria-pressed="${on}" data-toggle></button>`;
+  const users = [["Carlos Alvarenga","Project lead","Admin"],["Legal Ops process owner","Legal Operations","Reviewer"],["Legal Ops lead","Legal Operations","Reviewer"],["Process Taxonomy team","Client program","Viewer"],["Roles & Skills team","Client program","Viewer"]];
+  $("#adminList").innerHTML =
+   card("People and access", `${users.length} people`, `<div class="form"><table class="ut"><thead><tr><th>Name</th><th>Team</th><th>Role</th><th></th></tr></thead><tbody>${
+     users.map(u=>`<tr><td>${u[0]}</td><td>${u[1]}</td><td><select class="sel">${["Admin","Reviewer","Viewer"].map(r=>`<option ${u[2]===r?"selected":""}>${r}</option>`).join("")}</select></td><td style="text-align:right"><button class="btn del">Remove</button></td></tr>`).join("")
+   }</tbody></table><div style="margin-top:12px"><button class="btn">Invite person</button></div></div>`, true)
+  + card("Analysis settings", "How documents are read", `<div class="form">
+     <div class="field"><label>Taxonomy backbone<span class="help">New processes are fitted into this first</span></label><div><select class="sel"><option>Client Level 1–2 taxonomy draft (not yet uploaded)</option><option>Build from documents</option></select></div></div>
+     <div class="field"><label>Deepest level to build<span class="help">Level 4–5 only where needed</span></label><div><select class="sel"><option>Level 3</option><option>Level 4</option></select></div></div>
+     <div class="field"><label>Show people by role, not name</label><div>${tg(true)}</div></div>
+     <div class="field"><label>Flag deadlines without a control</label><div>${tg(true)}</div></div>
+     <div class="field"><label>Flag unwritten or inconsistent rules</label><div>${tg(true)}</div></div>
+     <div class="field"><label>Require approval before drafts are shared</label><div>${tg(true)}</div></div></div>`)
+  + card("Languages", "Interface and content", `<div class="form">
+     <div class="field"><label>Interface language<span class="help">Chosen by each person</span></label><div>Each person switches language from the globe in the top bar</div></div>
+     <div class="field"><label>Project master language<span class="help">Taxonomy, gaps and drafts are written in this language</span></label><div><select class="sel"><option>English</option><option>Deutsch</option><option>Français</option><option>Italiano</option></select></div></div>
+     <div class="field"><label>Document languages</label><div>English, Deutsch, Français, Italiano · detected automatically</div></div>
+     <div class="field"><label>Show original quotes with a translation</label><div>${tg(true)}</div></div>
+     <div class="field"><label>Swiss spelling and formats<span class="help">ss instead of ß · CHF 25'000 · 05.10.2026</span></label><div>${tg(true)}</div></div>
+     <div class="field"><label>Glossary<span class="help">Agreed terms the AI must use in each language</span></label><div><table class="gl"><thead><tr><th>English</th><th>Deutsch</th><th>Français</th><th>Italiano</th></tr></thead><tbody>
+       <tr><td>Process owner</td><td>Prozessverantwortliche Person</td><td>Responsable du processus</td><td>Responsabile del processo</td></tr>
+       <tr><td>Activity</td><td>Tätigkeit</td><td>Activité</td><td>Attività</td></tr>
+       <tr><td>Gap</td><td>Lücke</td><td>Écart</td><td>Lacuna</td></tr>
+       <tr><td>Sign-off</td><td>Freigabe</td><td>Validation</td><td>Approvazione</td></tr>
+       <tr><td>Outside counsel</td><td>Externe Kanzlei</td><td>Cabinet externe</td><td>Studio legale esterno</td></tr></tbody></table></div></div></div>`)
+  + card("Data and privacy", "Retention and audit", `<div class="form">
+     <div class="field"><label>Delete source files after analysis<span class="help">Results are kept; originals removed</span></label><div>${tg(false)}</div></div>
+     <div class="field"><label>Keep project data for</label><div><select class="sel"><option>12 months</option><option>Until project closes</option></select></div></div>
+     <div class="field"><label>Recent activity</label><div class="rm" style="margin:0">Oct 5 · Playbook uploaded<br>Oct 5 · Outside Counsel Engagement analyzed: 16 activities, 12 gaps<br>Oct 5 · 6 drafts generated</div></div></div>`);
+}
+
+/* ===== WIRING ===== */
+
+/* ===== PROCESS MAP (swimlanes) ===== */
+const MAP = {COL:170, BOXW:148, BOXH:72, LANE:100, HEAD:40};
+const mapCols = [0,1,2,3,4,5,6, 7,8,9,10,9, 11,12,13, 14];
+const mapEdges = [[0,1],[1,2],[2,3],[3,4],[4,5],[5,6],[6,7],[2,8],[9,10],[12,13]];
+let mapSel = 3;
+function laneOf(a){ const i = a.cells.indexOf("o"); return i<0 ? roles.length : i; }
+function renderMap(){
+  const {COL,BOXW,BOXH,LANE,HEAD} = MAP;
+  const nL = roles.length + 1, W = (Math.max(...mapCols)+1)*COL, H = HEAD + nL*LANE;
+  const pos = acts.map((a,i)=>({x: mapCols[i]*COL + (COL-BOXW)/2, y: HEAD + laneOf(a)*LANE + (LANE-BOXH)/2 + 8}));
+  let h = '';
+  // lanes
+  for(let l=0;l<nL;l++) h += `<div class="lane ${l===roles.length?"none":""}" style="top:${HEAD+l*LANE}px;height:${LANE}px"></div>`;
+  // stage headers + bands
+  stages.forEach((st,si)=>{
+    const cs = acts.map((a,i)=>a.st===st?mapCols[i]:null).filter(c=>c!==null);
+    const x0 = Math.min(...cs)*COL, w = (Math.max(...cs)+1)*COL - x0;
+    h += `<div class="band ${si%2?"alt":""}" style="left:${x0}px;width:${w}px;top:${HEAD}px"></div>`;
+    h += `<div class="stage" style="left:${x0}px;width:${w}px"><i style="background:${stageCol[st]}"></i>${st}</div>`;
+  });
+  // connectors
+  let svg = `<svg width="${W}" height="${H}" aria-hidden="true"><defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#333"/></marker></defs>`;
+  mapEdges.forEach(([a,b])=>{
+    const A=pos[a], B=pos[b], ax=A.x+BOXW, ay=A.y+BOXH/2, bx=B.x, by=B.y+BOXH/2;
+    const d = ay===by ? `M${ax},${ay} H${bx-2}` : `M${ax},${ay} H${ax+12} V${by} H${bx-2}`;
+    svg += `<path d="${d}" fill="none" stroke="#333" stroke-width="1.4" marker-end="url(#ah)"/>`;
+  });
+  // involvement chips + dotted links
+  let ghosts = '';
+  acts.forEach((a,i)=>{
+    [...a.cells].forEach((c,l)=>{
+      if(c!=="c") return;
+      const gx = mapCols[i]*COL + COL/2, gy = HEAD + l*LANE + 6;
+      ghosts += `<div class="ghost" style="left:${gx-36}px;top:${gy}px;width:72px">involved</div>`;
+      const by = pos[i].y + (gy < pos[i].y ? 0 : BOXH);
+      svg += `<path d="M${gx},${gy < pos[i].y ? gy+20 : gy} V${by}" stroke="#BBB" stroke-width="1" stroke-dasharray="3 3" fill="none"/>`;
+    });
+  });
+  svg += `</svg>`;
+  // boxes
+  const boxes = acts.map((a,i)=>{
+    const none = laneOf(a)===roles.length;
+    return `<button class="mbox ${a.gap?"gap":""} ${none?"none":""} ${i===mapSel?"sel":""}" data-act="${i}" style="left:${pos[i].x}px;top:${pos[i].y}px;width:${BOXW}px;height:${BOXH}px"><span class="num">${i+1}${a.gap?' <span class="warn">▲</span>':""}</span><span class="nm">${a.n}</span></button>`;
+  }).join("");
+  const laneHtml = `<div class="lh"></div>` + roles.map(r=>`<div class="ln" style="height:${LANE}px">${r[0]}<small>${r[1]}</small></div>`).join("") + `<div class="ln none" style="height:${LANE}px">No owner<small>Gap</small></div>`;
+  $("#byMap").innerHTML = `<div class="mapcard">
+    <div class="mapgrid"><div class="lanes">${laneHtml}</div>
+    <div class="mapscroll"><div class="canvas" style="width:${W}px;height:${H}px">${h}${svg}${ghosts}${boxes}</div></div></div>
+    <div class="mlegend"><span><i style="border:1.5px solid #111"></i>Activity in owner's lane</span><span><i style="border:1px dashed #AAA;border-radius:6px"></i>Role involved</span><span><i style="border:1.5px solid var(--red)"></i>Has a gap</span><span><i style="border:1.5px dashed var(--red)"></i>No owner</span><span>Scroll sideways to follow the process</span></div>
+    <div class="mdetail" id="mapDetail"></div></div>`;
+  showMapDetail(mapSel);
+}
+function showMapDetail(i){
+  mapSel = i; const a = acts[i];
+  document.querySelectorAll(".mbox").forEach(b=>b.classList.toggle("sel", +b.dataset.act===i));
+  const owners = [...a.cells].map((c,j)=>c==="o"?roles[j][0]:null).filter(Boolean);
+  const inv = [...a.cells].map((c,j)=>c==="c"?roles[j][0]:null).filter(Boolean);
+  const g = a.gap ? gaps.find(x=>x.id===a.gap) : null;
+  $("#mapDetail").innerHTML = `<div><div class="rt">${a.gap?'<span class="warn">▲</span>':""}${i+1}. ${a.n}</div>
+    <div class="rm">${a.st} · Owner: ${owners.join(", ")||"none named"}${inv.length?` · Involved: ${inv.join(", ")}`:""}</div>
+    <div class="ri">“${a.ev}”</div>
+    ${g?`<div class="crumb"><span class="warn" style="margin:0">Gap ${g.id.slice(1)}:</span> ${g.t}</div>`:""}</div>
+    <div class="acts">${g?`<button class="btn" data-gap="${g.id}">View gap</button>`:""}<button class="btn">Reassign</button></div>`;
+}
+document.addEventListener("click", e=>{ const b = e.target.closest(".mbox"); if(b) showMapDetail(+b.dataset.act); });
+
+
+/* ===== EXPORT ===== */
+const strip = h => String(h??"").replace(/<li>/g,"\n• ").replace(/<\/(p|h4|h5|tr|ol|ul)>/g,"\n").replace(/<\/t[dh]>/g," | ").replace(/<[^>]+>/g,"").replace(/&amp;/g,"&").replace(/\n{2,}/g,"\n").trim();
+const rolesOf = (a,t) => [...a.cells].map((c,j)=>c===t?roles[j][0]:null).filter(Boolean).join("; ");
+const DATASETS = {
+  activities: {name:"Activities", desc:"16 activities with owner, roles involved, source quote and gap", build:()=>({
+    head:["#","Stage","Activity","Owner","Involved","Source passage","Gap"],
+    rows: acts.map((a,i)=>[i+1,a.st,a.n,rolesOf(a,"o")||"None named",rolesOf(a,"c"),a.ev,a.gap?`Gap ${a.gap.slice(1)}: ${gaps.find(g=>g.id===a.gap).t}`:""]) })},
+  grid: {name:"Role grid", desc:"Activities against the 7 roles (O = owns, I = involved)", build:()=>({
+    head:["#","Activity",...roles.map(r=>r[0])],
+    rows: acts.map((a,i)=>[i+1,a.n,...[...a.cells].map(c=>c==="o"?"O":c==="c"?"I":"")]) })},
+  gaps: {name:"Gaps", desc:"12 gaps with priority, source passage and suggested fix", build:()=>({
+    head:["Gap","Priority","Type","Title","Description","Source passage","Suggested fix","Status"],
+    rows: gaps.map(g=>[g.id.slice(1),g.sev,g.type,g.t,g.d,g.q,g.fix,accepted.has(g.id)?"Accepted":"Open"]) })},
+  taxonomy: {name:"Taxonomy", desc:"Proposed Level 1–3 structure with evidence and flags", build:()=>{
+    const rows=[]; taxProp.forEach(a=>a.l2.forEach(b=>{
+      if(b.l3) b.l3.forEach(c=>rows.push([a.l1,b.n,c.n,c.ev==="g"?"Documented":"Partial","Analyzed in full",c.flag||""]));
+      else rows.push([a.l1,b.n,"","","Title only",[b.note,b.flag].filter(Boolean).join(". ")]);
+    })); return {head:["Level 1","Level 2","Level 3","Evidence","Analysis","Note or flag"], rows}; }},
+  drafts: {name:"New documentation", desc:"6 draft documents with status and full text", build:()=>({
+    head:["ID","Title","Status","Closes","Text"],
+    rows: drafts.map(d=>[d.id,d.n,d.s[1],d.gaps,strip(d.body)]) })}
+};
+const FORMATS = {
+  xlsx:{label:"Excel (.xlsx)", desc:"One tab per section, filters and frozen headers"},
+  csv:{label:"CSV", desc:"One file per section, opens anywhere"},
+  pdf:{label:"PDF", desc:"Print-ready report; choose Save as PDF"},
+  doc:{label:"Word (.doc)", desc:"Editable report"},
+  json:{label:"JSON", desc:"Structured data for other tools"}
+};
+const today = new Date().toISOString().slice(0,10);
+const fileBase = keys => `activity-mapper_${keys.length>1?"outside-counsel-engagement":DATASETS[keys[0]].name.toLowerCase().replace(/\s+/g,"-")}_${today}`;
+function download(name, data, type){
+  const blob = data instanceof Blob ? data : new Blob([data],{type});
+  const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = name;
+  document.body.appendChild(a); a.click(); setTimeout(()=>{ URL.revokeObjectURL(a.href); a.remove(); }, 1500);
+}
+const csvCell = v => { v = String(v??""); return /[",\n]/.test(v) ? `"${v.replace(/"/g,'""')}"` : v; };
+const toCSV = t => "﻿" + [t.head,...t.rows].map(r=>r.map(csvCell).join(",")).join("\r\n");
+const esc = v => String(v??"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+
+/* -- minimal .xlsx writer (no outside libraries) -- */
+const CRC = (()=>{ const t=new Uint32Array(256); for(let n=0;n<256;n++){let c=n;for(let k=0;k<8;k++)c=c&1?0xEDB88320^(c>>>1):c>>>1;t[n]=c>>>0;} return b=>{let c=0xFFFFFFFF;for(let i=0;i<b.length;i++)c=t[(c^b[i])&255]^(c>>>8);return (c^0xFFFFFFFF)>>>0;}; })();
+function zipStore(files){
+  const enc=new TextEncoder(), parts=[], cd=[]; let off=0;
+  const u16=v=>[v&255,(v>>8)&255], u32=v=>[v&255,(v>>8)&255,(v>>16)&255,(v>>>24)&255];
+  files.forEach(f=>{
+    const name=enc.encode(f.name), data=enc.encode(f.data), crc=CRC(data);
+    const common=[...u16(20),...u16(0),...u16(0),...u16(0),...u16(0x21),...u32(crc),...u32(data.length),...u32(data.length),...u16(name.length),...u16(0)];
+    const lh=new Uint8Array([...u32(0x04034b50),...common]); parts.push(lh,name,data);
+    cd.push(new Uint8Array([...u32(0x02014b50),...u16(20),...common,...u16(0),...u16(0),...u16(0),...u32(0),...u32(off)]),name);
+    off+=lh.length+name.length+data.length;
+  });
+  const cdLen=cd.reduce((s,x)=>s+x.length,0);
+  const end=new Uint8Array([...u32(0x06054b50),...u16(0),...u16(0),...u16(files.length),...u16(files.length),...u32(cdLen),...u32(off),...u16(0)]);
+  const all=[...parts,...cd,end], out=new Uint8Array(all.reduce((s,x)=>s+x.length,0)); let p=0; all.forEach(x=>{out.set(x,p);p+=x.length;}); return out;
+}
+const colL = n => { let s=""; n++; while(n){ const m=(n-1)%26; s=String.fromCharCode(65+m)+s; n=Math.floor((n-1)/26);} return s; };
+const xesc = v => esc(String(v??"").replace(/[\x00-\x08\x0B\x0C\x0E-\x1F]/g,""));
+function buildXlsx(keys){
+  const NS='xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"';
+  const sheets = keys.map(k=>({name:DATASETS[k].name.slice(0,31), t:DATASETS[k].build()}));
+  const files=[
+    {name:"[Content_Types].xml", data:`<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types"><Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/><Default Extension="xml" ContentType="application/xml"/><Override PartName="/xl/workbook.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet.main+xml"/><Override PartName="/xl/styles.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.styles+xml"/>${sheets.map((_,i)=>`<Override PartName="/xl/worksheets/sheet${i+1}.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.worksheet+xml"/>`).join("")}</Types>`},
+    {name:"_rels/.rels", data:`<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument" Target="xl/workbook.xml"/></Relationships>`},
+    {name:"xl/workbook.xml", data:`<?xml version="1.0" encoding="UTF-8" standalone="yes"?><workbook ${NS}><sheets>${sheets.map((s,i)=>`<sheet name="${xesc(s.name)}" sheetId="${i+1}" r:id="rId${i+1}"/>`).join("")}</sheets></workbook>`},
+    {name:"xl/_rels/workbook.xml.rels", data:`<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">${sheets.map((_,i)=>`<Relationship Id="rId${i+1}" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/worksheet" Target="worksheets/sheet${i+1}.xml"/>`).join("")}<Relationship Id="rId${sheets.length+1}" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/styles" Target="styles.xml"/></Relationships>`},
+    {name:"xl/styles.xml", data:`<?xml version="1.0" encoding="UTF-8" standalone="yes"?><styleSheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main"><fonts count="2"><font><sz val="11"/><name val="Calibri"/></font><font><b/><sz val="11"/><name val="Calibri"/></font></fonts><fills count="3"><fill><patternFill patternType="none"/></fill><fill><patternFill patternType="gray125"/></fill><fill><patternFill patternType="solid"><fgColor rgb="FFEDEDF0"/></patternFill></fill></fills><borders count="1"><border><left/><right/><top/><bottom/><diagonal/></border></borders><cellStyleXfs count="1"><xf numFmtId="0" fontId="0" fillId="0" borderId="0"/></cellStyleXfs><cellXfs count="3"><xf numFmtId="0" fontId="0" fillId="0" borderId="0" xfId="0"/><xf numFmtId="0" fontId="1" fillId="2" borderId="0" xfId="0" applyFont="1" applyFill="1"/><xf numFmtId="0" fontId="0" fillId="0" borderId="0" xfId="0" applyAlignment="1"><alignment wrapText="1" vertical="top"/></xf></cellXfs><cellStyles count="1"><cellStyle name="Normal" xfId="0" builtinId="0"/></cellStyles></styleSheet>`}
+  ];
+  sheets.forEach((s,i)=>{
+    const all=[s.t.head,...s.t.rows], last=colL(s.t.head.length-1);
+    const widths = s.t.head.map((h,c)=>Math.min(60,Math.max(6,...all.map(r=>String(r[c]??"").split("\n").reduce((m,l)=>Math.max(m,l.length),0)))+2));
+    const rows = all.map((r,ri)=>`<row r="${ri+1}">${r.map((v,c)=>{ const ref=colL(c)+(ri+1), st=ri===0?1:2;
+      return typeof v==="number" ? `<c r="${ref}" s="${st}"><v>${v}</v></c>` : `<c r="${ref}" t="inlineStr" s="${st}"><is><t xml:space="preserve">${xesc(v)}</t></is></c>`; }).join("")}</row>`).join("");
+    files.push({name:`xl/worksheets/sheet${i+1}.xml`, data:`<?xml version="1.0" encoding="UTF-8" standalone="yes"?><worksheet ${NS}><sheetViews><sheetView workbookViewId="0"${i===0?' tabSelected="1"':""}><pane ySplit="1" topLeftCell="A2" activePane="bottomLeft" state="frozen"/></sheetView></sheetViews><cols>${widths.map((w,c)=>`<col min="${c+1}" max="${c+1}" width="${w}" customWidth="1"/>`).join("")}</cols><sheetData>${rows}</sheetData><autoFilter ref="A1:${last}${all.length}"/></worksheet>`});
+  });
+  return zipStore(files);
+}
+window.__buildXlsx = buildXlsx;
+
+function reportHtml(keys){
+  return `<h1>Outside Counsel Engagement: activity mapping sample output</h1><p class="pm">InPhase Labs · Activity Mapper · Exported ${today} · Source: ${SRC} · People shown by role</p>` +
+    keys.map(k=>{ const t=DATASETS[k].build(); return `<h2>${DATASETS[k].name}</h2><table><thead><tr>${t.head.map(h=>`<th>${esc(h)}</th>`).join("")}</tr></thead><tbody>${t.rows.map(r=>`<tr>${r.map(v=>`<td>${esc(v).replace(/\n/g,"<br>")}</td>`).join("")}</tr>`).join("")}</tbody></table>`; }).join("") +
+    `<p class="pf">Draft output for review. Activities, gaps and drafts are generated from one playbook section and need confirmation by the process owner.</p>`;
+}
+function runExport(keys, fmt, anchor){
+  const base = fileBase(keys);
+  if(fmt==="xlsx") download(base+".xlsx", new Blob([buildXlsx(keys)],{type:"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"}));
+  if(fmt==="csv") keys.forEach((k,i)=>setTimeout(()=>download(`${fileBase([k])}.csv`, toCSV(DATASETS[k].build()), "text/csv;charset=utf-8"), i*350));
+  if(fmt==="json") download(base+".json", JSON.stringify({exported:today, source:SRC, sections:Object.fromEntries(keys.map(k=>{ const t=DATASETS[k].build(); return [DATASETS[k].name, t.rows.map(r=>Object.fromEntries(t.head.map((h,c)=>[h,r[c]])))]; }))},null,2), "application/json");
+  if(fmt==="doc") download(base+".doc", `<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word"><head><meta charset="utf-8"><style>body{font-family:Calibri,Arial;font-size:10pt}table{border-collapse:collapse;width:100%}th,td{border:1px solid #bbb;padding:3px 5px;vertical-align:top;font-size:9pt}th{background:#EDEDF0}h1{font-weight:normal}</style></head><body>${reportHtml(keys)}</body></html>`, "application/msword");
+  if(fmt==="pdf"){ $("#printReport").innerHTML = reportHtml(keys); setTimeout(()=>{ window.print(); }, 50); }
+  if(anchor) flash(anchor, fmt==="pdf" ? "Choose “Save as PDF”" : `Exported ${FORMATS[fmt].label.split(" ")[0]}`);
+}
+function openExport(preset, anchor){
+  const keys = preset==="all" ? Object.keys(DATASETS) : [preset];
+  const body = `<p class="xh">What to include</p><div class="xopt">${Object.entries(DATASETS).map(([k,d])=>`<label><input type="checkbox" name="xk" value="${k}" ${keys.includes(k)?"checked":""}><span><b>${d.name}</b><small>${d.desc}</small></span></label>`).join("")}</div>
+    <p class="xh">Format</p><div class="xopt fmtgrid">${Object.entries(FORMATS).map(([k,f],i)=>`<label><input type="radio" name="xf" value="${k}" ${i===0?"checked":""}><span><b>${f.label}</b><small>${f.desc}</small></span></label>`).join("")}</div>`;
+  dialog("Export", body, [["Cancel","safe"],["Export","primary",()=>{
+    const ks=[...document.querySelectorAll('#dlgB input[name=xk]:checked')].map(x=>x.value);
+    const f=(document.querySelector('#dlgB input[name=xf]:checked')||{}).value;
+    if(!ks.length){ setTimeout(()=>openExport(preset,anchor),0); return; }
+    runExport(ks, f, anchor);
+  }]]);
+}
+window.addEventListener("afterprint", ()=>{ $("#printReport").innerHTML=""; });
+document.addEventListener("click", e=>{
+  const x = e.target.closest("[data-export]"); if(x){ e.stopPropagation(); openExport(x.dataset.export, x.closest(".filters")||x.parentElement); return; }
+  const xd = e.target.closest("[data-export-draft]");
+  if(xd){ e.stopPropagation(); const d = drafts.find(z=>z.id===xd.dataset.exportDraft);
+    download(`${d.n.replace(/[^\w]+/g,"-").toLowerCase()}.doc`, `<html><head><meta charset="utf-8"><style>body{font-family:Calibri,Arial;font-size:11pt}table{border-collapse:collapse}td,th{border:1px solid #bbb;padding:4px}</style></head><body>${d.body}<p style="color:#777;font-size:9pt">Drafted from ${SRC}. Needs confirmation by the process owner.</p></body></html>`, "application/msword");
+    flash(xd, "Exported Word"); }
+}, true);
+
+/* ===== MY REVIEWS ===== */
+function renderReviews(){
+  const d = drafts.filter(x=>x.s[1]!=="Approved");
+  const g = gaps.filter(x=>x.sev==="High" && !accepted.has(x.id));
+  $("#reviewList").innerHTML =
+    card("Drafts", `${d.length} waiting`, d.map(x=>`<div class="row"><span class="chip ${x.s[0]}">${x.s[1]}</span><div><div class="rt">${x.n}</div><div class="rm">Closes ${x.gaps}</div></div><div class="acts"><button class="btn" data-draft="${x.id}">Open draft</button></div></div>`).join(""), true)
+  + (g.length ? card("High-priority gaps", `${g.length} waiting`, g.map(x=>`<div class="row flag"><span class="chip r">${x.type}</span><div><div class="rt">Gap ${x.id.slice(1)}: ${x.t}</div><div class="rm">${x.fix}</div></div><div class="acts"><button class="btn" data-gap="${x.id}">View gap</button></div></div>`).join(""), true)
+           : `<div class="empty">No high-priority gaps are waiting for you.</div>`);
+}
+
+/* ===== Remember open/closed groups per person ===== */
+const STORE = "am-cards-carlos";
+let cardState = {};
+try { cardState = JSON.parse(localStorage.getItem(STORE)||"{}"); } catch(e) {}
+const cardKey = c => (c.closest(".view")?.id||"") + ":" + c.querySelector(".title").textContent.trim();
+function applyState(){ document.querySelectorAll(".card").forEach(c=>{ const k=cardKey(c); if(k in cardState) c.classList.toggle("open", cardState[k]); }); }
+function saveState(c){ cardState[cardKey(c)] = c.classList.contains("open"); try { localStorage.setItem(STORE, JSON.stringify(cardState)); } catch(e) {} }
+
+/* ===== In-page feedback and dialogs (no browser pop-ups) ===== */
+function flash(near, msg){
+  const box = near.classList && near.classList.contains("acts") ? near : (near.closest(".acts")||near.parentElement);
+  box.querySelectorAll(".saved").forEach(x=>x.remove());
+  const sp = document.createElement("span"); sp.className="saved"; sp.textContent=msg; box.appendChild(sp);
+  setTimeout(()=>{ sp.style.opacity=0; setTimeout(()=>sp.remove(),400); }, 2000);
+}
+function dialog(title, bodyHtml, actions){
+  $("#dlgT").textContent = title; $("#dlgB").innerHTML = bodyHtml;
+  const a = $("#dlgA"); a.innerHTML = "";
+  actions.forEach(([label, cls, fn])=>{ const b=document.createElement("button"); b.className="btn "+(cls||""); b.textContent=label; b.onclick=()=>{ closeDialog(); fn&&fn(); }; a.appendChild(b); });
+  $("#scrim").classList.add("show");
+  const safe = a.querySelector(".safe") || a.firstChild; safe.focus();
+}
+function closeDialog(){ $("#scrim").classList.remove("show"); }
+$("#scrim").addEventListener("click", e=>{ if(e.target.id==="scrim") closeDialog(); });
+document.addEventListener("keydown", e=>{ if(e.key==="Escape"){ closeDialog(); $("#menu").classList.remove("show"); } });
+
+/* ===== Navigation ===== */
+const fabText = {intake:"Add documents", output:"Add activity", taxonomy:"Add process", gaps:"Add gap", docs:"Draft new document", admin:"Invite person", reviews:"Draft new document"};
+function go(v){
+  document.querySelectorAll("#nav button").forEach(x=>{ if(x.dataset.v===v) x.setAttribute("aria-current","page"); else x.removeAttribute("aria-current"); });
+  document.querySelectorAll(".view").forEach(s=>s.classList.toggle("active", s.id===v));
+  $("#fab").textContent = fabText[v];
+  $("#menu").classList.remove("show");
+  if(v==="reviews"){ renderReviews(); applyState(); }
+}
+$("#nav").addEventListener("click", e=>{ const b=e.target.closest("button"); if(b){ go(b.dataset.v); window.scrollTo(0,0);} });
+$("#home").addEventListener("click", ()=>{ go("intake"); window.scrollTo(0,0); });
+$("#avatar").addEventListener("click", e=>{ e.stopPropagation(); const m=$("#menu"); m.classList.toggle("show"); $("#avatar").setAttribute("aria-expanded", m.classList.contains("show")); });
+$("#menu").addEventListener("click", e=>{
+  const b = e.target.closest("button"); if(!b) return;
+  if(b.dataset.v){ go(b.dataset.v); return; }
+  if(b.id==="exportAll"){ $("#menu").classList.remove("show"); openExport("all"); return; }
+  if(b.id==="viewAs"){
+    const rev = document.body.classList.toggle("reviewer");
+    b.textContent = rev ? "View as admin" : "View as reviewer";
+    $("#roleLbl").textContent = rev ? "Project lead · viewing as Reviewer" : "Project lead · Admin";
+    if(rev && $("#admin").classList.contains("active")) go("intake");
+    $("#menu").classList.remove("show"); return;
+  }
+  if(b.id==="signout"){ $("#menu").classList.remove("show"); dialog("Sign out?", "<p>You'll need to sign in again to continue reviewing.</p>", [["Stay signed in","primary safe"],["Sign out","",()=>{}]]); }
+});
+document.addEventListener("click", e=>{ if(!e.target.closest("#menu,#avatar")) $("#menu").classList.remove("show"); });
+$("#gapStatus").addEventListener("change", renderGaps);
+
+function reveal(el){ if(!el) return; el.closest(".card").classList.add("open"); el.scrollIntoView({behavior:"smooth",block:"center"}); el.style.background="#FFF8E6"; setTimeout(()=>el.style.background="",1600); }
+
+document.addEventListener("click", e=>{
+  if(e.target.closest("#menu,#scrim,#avatar")) return;
+  const ch = e.target.closest(".ch"); if(ch){ ch.parentElement.classList.toggle("open"); saveState(ch.parentElement); return; }
+  const all = e.target.closest("[data-all]");
+  if(all){ all.closest(".view").querySelectorAll(".card").forEach(c=>{ c.classList.toggle("open", all.dataset.all==="open"); saveState(c); }); return; }
+  const seg = e.target.closest(".seg button");
+  if(seg){
+    seg.parentElement.querySelectorAll("button").forEach(x=>x.classList.toggle("on", x===seg));
+    const k = seg.parentElement.dataset.seg;
+    if(k==="output"){ const g = seg.dataset.g; const ids = {process:"#byProcess", map:"#byMap", role:"#byRole"}; Object.entries(ids).forEach(([key,id])=>$(id).style.display = key===g?"":"none"); document.querySelector("#output .sh").textContent = {process:"Activities", map:"Process map", role:"Activities by role"}[g]; document.querySelectorAll('#output [data-all]').forEach(b=>b.style.display = g==="process"?"":"none"); }
+    if(k==="tax"){ renderTax(seg.dataset.g); document.querySelector("#taxonomy .sh").textContent = seg.dataset.g==="prop"?"Process areas":"Playbook sections"; document.querySelector("#taxonomy .eyebrow").textContent = seg.dataset.g==="prop"?"Proposed structure":"As written"; applyState(); }
+    return;
+  }
+  const del = e.target.closest(".btn.del");
+  if(del){
+    const row = del.closest(".row,tr"); const name = (row.querySelector(".rt,td")||{}).textContent||"this item"; const verb = del.textContent.trim();
+    dialog(`${verb} “${name.trim()}”?`, `<p>${verb==="Dismiss"?"This gap will be removed from the list and won't appear in exports.":verb==="Discard"?"This draft will be deleted. You can generate it again later.":"This will be removed from the project."}</p>`,
+      [["Cancel","primary safe"],[verb,"danger",()=>{ row.remove(); }]]);
+    return;
+  }
+  const gp = e.target.closest("[data-gap]"); if(gp){ go("gaps"); if(accepted.has(gp.dataset.gap)){ $("#gapStatus").value="all"; renderGaps(); } reveal($("#gap-"+gp.dataset.gap)); return; }
+  const dr = e.target.closest("[data-draft]");
+  if(dr){ go("docs"); const p=$("#pv-"+dr.dataset.draft); p.classList.add("show"); const b=document.querySelector(`[data-preview="${dr.dataset.draft}"]`); if(b) b.textContent="Close draft"; reveal($("#doc-"+dr.dataset.draft)); return; }
+  const done = e.target.closest("[data-done]");
+  if(done){
+    const row = done.closest(".row"); const chip = row.querySelector(".chip"); const w = done.textContent.trim();
+    const label = w==="Confirm"?"Confirmed":w==="Accept"?"Accepted":"Approved";
+    chip.className="chip g"; chip.textContent = label; const acts = done.parentElement; done.remove(); flash(acts, label);
+    if(w==="Accept" && row.dataset.gid){ accepted.add(row.dataset.gid); }
+    return;
+  }
+  const pv = e.target.closest("[data-preview]");
+  if(pv){ const p = $("#pv-"+pv.dataset.preview); p.classList.toggle("show"); pv.textContent = p.classList.contains("show")?"Close draft":"Open draft"; return; }
+  const tg = e.target.closest("[data-toggle]"); if(tg){ tg.classList.toggle("on"); tg.setAttribute("aria-pressed", tg.classList.contains("on")); flash(tg, "Saved"); return; }
+  const t = e.target.closest("[data-toast]"); if(t){ flash(t, t.dataset.toast); return; }
+  if(e.target.id==="fab"){
+    const v = document.querySelector(".view.active").id;
+    if(v==="intake") dialog("Add documents", `<div class="drop"><b>Drop files here</b>PDF, Word, PowerPoint or Excel</div>`, [["Cancel","safe"],["Choose files","primary",()=>{}]]);
+    else dialog(fabText[v], `<p>In the working version, this opens a short form here.</p>`, [["Close","primary safe"]]);
+  }
+});
+
+/* ===== First load: light placeholders, then content ===== */
+["#intakeList","#byProcess","#taxList","#gapList","#docList","#adminList"].forEach(id=>{ const el=$(id); el.dataset.real = el.innerHTML; el.innerHTML = '<div class="skel"></div><div class="skel"></div>'; });
+setTimeout(()=>{
+  $("#intakeList").innerHTML = $("#intakeList").dataset.real;
+  renderOutput(); renderMap(); renderGaps(); renderTax("prop"); renderDocs(); renderAdmin(); applyState();
+}, 450);
+
+/* ===== LANGUAGES ===== */
+const I18N = {"Each person switches language from the globe in the top bar": ["Jede Person wählt die Sprache über das Globus-Symbol oben", "Chaque personne choisit sa langue via le globe en haut", "Ogni persona sceglie la lingua dal globo in alto"],"Intake": ["Erfassung", "Collecte", "Acquisizione"], "Process output": ["Prozessergebnis", "Résultats", "Risultati"], "Taxonomy": ["Taxonomie", "Taxonomie", "Tassonomia"], "Gaps": ["Lücken", "Écarts", "Lacune"], "New documentation": ["Neue Dokumentation", "Nouvelle documentation", "Nuova documentazione"], "My reviews": ["Meine Prüfungen", "Mes revues", "Le mie revisioni"], "Export": ["Exportieren", "Exporter", "Esporta"], "View as reviewer": ["Als Prüfer ansehen", "Voir en tant que réviseur", "Visualizza come revisore"], "View as admin": ["Als Admin ansehen", "Voir en tant qu'admin", "Visualizza come admin"], "Sign out": ["Abmelden", "Se déconnecter", "Esci"], "Project lead · Admin": ["Projektleitung · Admin", "Responsable de projet · Admin", "Responsabile di progetto · Admin"], "Project lead · viewing as Reviewer": ["Projektleitung · Ansicht als Prüfer", "Responsable de projet · vue réviseur", "Responsabile di progetto · vista revisore"], "Language": ["Sprache", "Langue", "Lingua"], "By source": ["Nach Quelle", "Par source", "Per fonte"], "By status": ["Nach Status", "Par statut", "Per stato"], "All sources": ["Alle Quellen", "Toutes les sources", "Tutte le fonti"], "Uploaded": ["Hochgeladen", "Téléversés", "Caricati"], "Linked": ["Verknüpft", "Liés", "Collegati"], "All statuses": ["Alle Status", "Tous les statuts", "Tutti gli stati"], "Read": ["Gelesen", "Lu", "Letto"], "No access": ["Kein Zugriff", "Pas d'accès", "Nessun accesso"], "Skipped": ["Übersprungen", "Ignoré", "Ignorato"], "Open all": ["Alle öffnen", "Tout ouvrir", "Apri tutto"], "Collapse all": ["Alle schliessen", "Tout réduire", "Comprimi tutto"], "Sources": ["Quellen", "Sources", "Fonti"], "Documents and links": ["Dokumente und Verknüpfungen", "Documents et liens", "Documenti e collegamenti"], "Linked from the playbook": ["Im Playbook verknüpft", "Liés depuis le playbook", "Collegati dal playbook"], "Multilingual examples (illustrative)": ["Mehrsprachige Beispiele (illustrativ)", "Exemples multilingues (illustratifs)", "Esempi multilingue (illustrativi)"], "View extraction": ["Extraktion ansehen", "Voir l'extraction", "Visualizza estrazione"], "Replace": ["Ersetzen", "Remplacer", "Sostituisci"], "Request access": ["Zugriff anfordern", "Demander l'accès", "Richiedi accesso"], "Upload copy": ["Kopie hochladen", "Téléverser une copie", "Carica una copia"], "Include": ["Einbeziehen", "Inclure", "Includi"], "List": ["Liste", "Liste", "Elenco"], "Process map": ["Prozesslandkarte", "Carte des processus", "Mappa dei processi"], "Role grid": ["Rollenraster", "Grille des rôles", "Griglia dei ruoli"], "All activities": ["Alle Tätigkeiten", "Toutes les activités", "Tutte le attività"], "Flagged only": ["Nur markierte", "Signalées uniquement", "Solo segnalate"], "All stages": ["Alle Phasen", "Toutes les phases", "Tutte le fasi"], "Activities": ["Tätigkeiten", "Activités", "Attività"], "Activities by role": ["Tätigkeiten nach Rolle", "Activités par rôle", "Attività per ruolo"], "Owner set": ["Zugewiesen", "Attribué", "Assegnato"], "No owner": ["Nicht zugewiesen", "Non attribué", "Non assegnato"], "Confirm": ["Bestätigen", "Confirmer", "Conferma"], "Reassign": ["Neu zuweisen", "Réattribuer", "Riassegna"], "View gap": ["Lücke ansehen", "Voir l'écart", "Visualizza lacuna"], "Activity": ["Tätigkeit", "Activité", "Attività"], "Owns": ["Verantwortlich", "Responsable", "Responsabile"], "Involved": ["Beteiligt", "Impliqué", "Coinvolto"], "involved": ["beteiligt", "impliqué", "coinvolto"], "Has a gap": ["Mit Lücke", "Avec écart", "Con lacuna"], "Gap": ["Lücke", "Écart", "Lacuna"], "Activity in owner's lane": ["Tätigkeit in der Bahn der verantwortlichen Rolle", "Activité dans le couloir du responsable", "Attività nella corsia del responsabile"], "Role involved": ["Beteiligte Rolle", "Rôle impliqué", "Ruolo coinvolto"], "Scroll sideways to follow the process": ["Seitlich scrollen, um dem Prozess zu folgen", "Faites défiler latéralement pour suivre le processus", "Scorri lateralmente per seguire il processo"], "Proposed": ["Vorgeschlagen", "Proposée", "Proposta"], "As in playbook": ["Wie im Playbook", "Comme dans le playbook", "Come nel playbook"], "All Level 1 areas": ["Alle Bereiche der Ebene 1", "Tous les domaines de niveau 1", "Tutte le aree di livello 1"], "All sections": ["Alle Abschnitte", "Toutes les sections", "Tutte le sezioni"], "Analyzed": ["Analysiert", "Analysées", "Analizzate"], "Title only": ["Nur Titel", "Titre seul", "Solo titolo"], "Flagged": ["Markiert", "Signalées", "Segnalate"], "Proposed structure": ["Vorgeschlagene Struktur", "Structure proposée", "Struttura proposta"], "Process areas": ["Prozessbereiche", "Domaines de processus", "Aree di processo"], "As written": ["Wie geschrieben", "Tel que rédigé", "Come scritto"], "Playbook sections": ["Playbook-Abschnitte", "Sections du playbook", "Sezioni del playbook"], "Analyze section": ["Abschnitt analysieren", "Analyser la section", "Analizza sezione"], "Move": ["Verschieben", "Déplacer", "Sposta"], "Documented": ["Dokumentiert", "Documenté", "Documentato"], "Partial": ["Teilweise", "Partiel", "Parziale"], "Approve": ["Genehmigen", "Approuver", "Approva"], "Rename": ["Umbenennen", "Renommer", "Rinomina"], "Level 2 · analyzed in full": ["Ebene 2 · vollständig analysiert", "Niveau 2 · analysé en entier", "Livello 2 · analizzato per intero"], "Level 2 · placed from table of contents": ["Ebene 2 · aus dem Inhaltsverzeichnis übernommen", "Niveau 2 · placé d'après la table des matières", "Livello 2 · collocato dall'indice"], "By severity": ["Nach Schweregrad", "Par gravité", "Per gravità"], "By type": ["Nach Typ", "Par type", "Per tipo"], "All types": ["Alle Typen", "Tous les types", "Tutti i tipi"], "Ownership": ["Verantwortung", "Responsabilité", "Responsabilità"], "Control": ["Kontrolle", "Contrôle", "Controllo"], "Missing step": ["Fehlender Schritt", "Étape manquante", "Passaggio mancante"], "Policy": ["Richtlinie", "Politique", "Politica"], "Documentation": ["Dokumentation", "Documentation", "Documentazione"], "Resilience": ["Resilienz", "Résilience", "Resilienza"], "Structure": ["Struktur", "Structure", "Struttura"], "Open": ["Offen", "Ouverts", "Aperte"], "Accepted": ["Akzeptiert", "Accepté", "Accettata"], "All": ["Alle", "Tous", "Tutti"], "Gaps by priority": ["Lücken nach Priorität", "Écarts par priorité", "Lacune per priorità"], "High priority": ["Hohe Priorität", "Priorité élevée", "Priorità alta"], "Medium priority": ["Mittlere Priorität", "Priorité moyenne", "Priorità media"], "Low priority": ["Niedrige Priorität", "Priorité faible", "Priorità bassa"], "Suggested fix:": ["Vorgeschlagene Lösung:", "Correction proposée :", "Soluzione proposta:"], "Accept": ["Akzeptieren", "Accepter", "Accetta"], "View draft": ["Entwurf ansehen", "Voir le brouillon", "Visualizza bozza"], "Dismiss": ["Verwerfen", "Rejeter", "Ignora"], "By gap": ["Nach Lücke", "Par écart", "Per lacuna"], "Draft": ["Entwurf", "Brouillon", "Bozza"], "Decision needed": ["Entscheid nötig", "Décision requise", "Decisione necessaria"], "Approved": ["Genehmigt", "Approuvé", "Approvato"], "Drafts": ["Entwürfe", "Brouillons", "Bozze"], "Documents by status": ["Dokumente nach Status", "Documents par statut", "Documenti per stato"], "Drafts to review": ["Zu prüfende Entwürfe", "Brouillons à réviser", "Bozze da rivedere"], "Decisions needed": ["Nötige Entscheide", "Décisions requises", "Decisioni necessarie"], "Open draft": ["Entwurf öffnen", "Ouvrir le brouillon", "Apri bozza"], "Close draft": ["Entwurf schliessen", "Fermer le brouillon", "Chiudi bozza"], "Edit": ["Bearbeiten", "Modifier", "Modifica"], "Discard": ["Verwerfen", "Supprimer", "Elimina"], "Settings": ["Einstellungen", "Paramètres", "Impostazioni"], "Project settings": ["Projekteinstellungen", "Paramètres du projet", "Impostazioni del progetto"], "People and access": ["Personen und Zugriff", "Personnes et accès", "Persone e accesso"], "Name": ["Name", "Nom", "Nome"], "Role": ["Rolle", "Rôle", "Ruolo"], "Project lead": ["Projektleitung", "Responsable de projet", "Responsabile di progetto"], "Reviewer": ["Prüfer", "Réviseur", "Revisore"], "Viewer": ["Leser", "Lecteur", "Lettore"], "Remove": ["Entfernen", "Retirer", "Rimuovi"], "Invite person": ["Person einladen", "Inviter une personne", "Invita persona"], "Analysis settings": ["Analyse-Einstellungen", "Paramètres d'analyse", "Impostazioni di analisi"], "How documents are read": ["Wie Dokumente gelesen werden", "Comment les documents sont lus", "Come vengono letti i documenti"], "Taxonomy backbone": ["Taxonomie-Grundgerüst", "Ossature de la taxonomie", "Struttura della tassonomia"], "New processes are fitted into this first": ["Neue Prozesse werden zuerst hier eingeordnet", "Les nouveaux processus y sont d'abord intégrés", "I nuovi processi vengono inseriti prima qui"], "Build from documents": ["Aus Dokumenten aufbauen", "Construire à partir des documents", "Costruisci dai documenti"], "Deepest level to build": ["Tiefste Ebene", "Niveau le plus détaillé", "Livello più profondo"], "Level 4–5 only where needed": ["Ebene 4–5 nur bei Bedarf", "Niveaux 4–5 seulement si nécessaire", "Livelli 4–5 solo se necessario"], "Level 3": ["Ebene 3", "Niveau 3", "Livello 3"], "Level 4": ["Ebene 4", "Niveau 4", "Livello 4"], "Show people by role, not name": ["Personen nach Rolle statt Name zeigen", "Afficher les personnes par rôle, pas par nom", "Mostra le persone per ruolo, non per nome"], "Flag deadlines without a control": ["Fristen ohne Kontrolle markieren", "Signaler les délais sans contrôle", "Segnala le scadenze senza controllo"], "Flag unwritten or inconsistent rules": ["Ungeschriebene oder uneinheitliche Regeln markieren", "Signaler les règles non écrites ou incohérentes", "Segnala regole non scritte o incoerenti"], "Require approval before drafts are shared": ["Freigabe vor dem Teilen von Entwürfen verlangen", "Exiger une approbation avant de partager les brouillons", "Richiedi approvazione prima di condividere le bozze"], "Data and privacy": ["Daten und Datenschutz", "Données et confidentialité", "Dati e privacy"], "Retention and audit": ["Aufbewahrung und Prüfpfad", "Conservation et audit", "Conservazione e audit"], "Delete source files after analysis": ["Quelldateien nach der Analyse löschen", "Supprimer les fichiers sources après l'analyse", "Elimina i file sorgente dopo l'analisi"], "Results are kept; originals removed": ["Ergebnisse bleiben, Originale werden entfernt", "Les résultats sont conservés, les originaux supprimés", "I risultati restano, gli originali vengono rimossi"], "Keep project data for": ["Projektdaten aufbewahren für", "Conserver les données du projet pendant", "Conserva i dati del progetto per"], "12 months": ["12 Monate", "12 mois", "12 mesi"], "Until project closes": ["Bis Projektabschluss", "Jusqu'à la clôture du projet", "Fino alla chiusura del progetto"], "Recent activity": ["Letzte Aktivitäten", "Activité récente", "Attività recenti"], "Assigned to you": ["Ihnen zugewiesen", "Qui vous sont assignés", "Assegnati a te"], "Waiting for review": ["Zur Prüfung offen", "En attente de revue", "In attesa di revisione"], "Add documents": ["Dokumente hinzufügen", "Ajouter des documents", "Aggiungi documenti"], "Add activity": ["Tätigkeit hinzufügen", "Ajouter une activité", "Aggiungi attività"], "Add process": ["Prozess hinzufügen", "Ajouter un processus", "Aggiungi processo"], "Add gap": ["Lücke hinzufügen", "Ajouter un écart", "Aggiungi lacuna"], "Draft new document": ["Neues Dokument entwerfen", "Rédiger un nouveau document", "Redigi nuovo documento"], "Confirmed": ["Bestätigt", "Confirmé", "Confermato"], "Saved": ["Gespeichert", "Enregistré", "Salvato"], "Cancel": ["Abbrechen", "Annuler", "Annulla"], "Close": ["Schliessen", "Fermer", "Chiudi"], "What to include": ["Inhalt", "Contenu à inclure", "Cosa includere"], "Format": ["Format", "Format", "Formato"], "Languages": ["Sprachen", "Langues", "Lingue"], "Interface and content": ["Oberfläche und Inhalte", "Interface et contenu", "Interfaccia e contenuti"], "Interface language": ["Sprache der Oberfläche", "Langue de l'interface", "Lingua dell'interfaccia"], "Chosen by each person": ["Wählt jede Person selbst", "Choisie par chaque personne", "Scelta da ogni persona"], "Project master language": ["Hauptsprache des Projekts", "Langue principale du projet", "Lingua principale del progetto"], "Taxonomy, gaps and drafts are written in this language": ["Taxonomie, Lücken und Entwürfe werden in dieser Sprache verfasst", "La taxonomie, les écarts et les brouillons sont rédigés dans cette langue", "Tassonomia, lacune e bozze sono redatte in questa lingua"], "Document languages": ["Dokumentsprachen", "Langues des documents", "Lingue dei documenti"], "English, Deutsch, Français, Italiano · detected automatically": ["English, Deutsch, Français, Italiano · automatisch erkannt", "English, Deutsch, Français, Italiano · détectées automatiquement", "English, Deutsch, Français, Italiano · rilevate automaticamente"], "Show original quotes with a translation": ["Originalzitate mit Übersetzung zeigen", "Afficher les citations originales avec traduction", "Mostra le citazioni originali con traduzione"], "Swiss spelling and formats": ["Schweizer Schreibweise und Formate", "Orthographe et formats suisses", "Ortografia e formati svizzeri"], "Glossary": ["Glossar", "Glossaire", "Glossario"], "Agreed terms the AI must use in each language": ["Vereinbarte Begriffe, die die KI in jeder Sprache verwendet", "Termes convenus que l'IA utilise dans chaque langue", "Termini concordati che l'IA usa in ogni lingua"], "Detected language": ["Erkannte Sprache", "Langue détectée", "Lingua rilevata"], "Original": ["Original", "Original", "Originale"], "English translation": ["Englische Übersetzung", "Traduction anglaise", "Traduzione inglese"], "Mapped to": ["Zugeordnet zu", "Associé à", "Associato a"], "Documents read for this project, and the documents they link to. Sample output from the Outside Counsel Engagement section of a fictional Legal Operations Playbook; people are shown by role.": ["Für dieses Projekt gelesene Dokumente und die darin verknüpften Dokumente. Beispielergebnis aus dem Abschnitt «Outside Counsel Engagement» eines fiktiven Legal Operations Playbook; Personen werden nach Rolle angezeigt.", "Documents lus pour ce projet et documents auxquels ils renvoient. Exemple tiré de la section « Outside Counsel Engagement » d'un Legal Operations Playbook fictif ; les personnes sont présentées par rôle.", "Documenti letti per questo progetto e documenti a cui rimandano. Esempio tratto dalla sezione «Outside Counsel Engagement» di un Legal Operations Playbook fittizio; le persone sono indicate per ruolo."], "The as-is activity map for Outside Counsel Engagement: who does each step today, according to the playbook.": ["Die Ist-Tätigkeitslandkarte für Outside Counsel Engagement: wer jeden Schritt heute ausführt, laut Playbook.", "La cartographie actuelle des activités pour Outside Counsel Engagement : qui réalise chaque étape aujourd'hui, selon le playbook.", "La mappa attuale delle attività per Outside Counsel Engagement: chi svolge oggi ogni passaggio, secondo il playbook."], "The playbook's 20 sections, regrouped into proposed Level 1 areas. Outside Counsel Engagement is broken down to Level 3; other sections are placed by title only until analyzed.": ["Die 20 Abschnitte des Playbooks, neu gruppiert in vorgeschlagene Bereiche der Ebene 1. Outside Counsel Engagement ist bis Ebene 3 aufgeschlüsselt; andere Abschnitte sind bis zur Analyse nur nach Titel eingeordnet.", "Les 20 sections du playbook, regroupées en domaines de niveau 1 proposés. Outside Counsel Engagement est détaillé jusqu'au niveau 3 ; les autres sections sont placées par titre jusqu'à leur analyse.", "Le 20 sezioni del playbook, raggruppate in aree di livello 1 proposte. Outside Counsel Engagement è dettagliato fino al livello 3; le altre sezioni sono collocate solo per titolo fino all'analisi."], "Where the documented process is missing an owner, a rule, a control, or a step. Each gap links to the passage it comes from.": ["Wo dem dokumentierten Prozess eine Verantwortung, eine Regel, eine Kontrolle oder ein Schritt fehlt. Jede Lücke verweist auf die Textstelle, aus der sie stammt.", "Là où il manque au processus documenté un responsable, une règle, un contrôle ou une étape. Chaque écart renvoie au passage dont il provient.", "Dove al processo documentato manca un responsabile, una regola, un controllo o un passaggio. Ogni lacuna rimanda al passo da cui proviene."], "Drafts generated to close the gaps. Each needs the process owner's review before use.": ["Entwürfe zum Schliessen der Lücken. Jeder muss vor der Verwendung von der prozessverantwortlichen Person geprüft werden.", "Brouillons générés pour combler les écarts. Chacun doit être revu par le responsable du processus avant utilisation.", "Bozze generate per colmare le lacune. Ognuna deve essere rivista dal responsabile del processo prima dell'uso."], "Project settings, people and access, and how the analysis runs.": ["Projekteinstellungen, Personen und Zugriff sowie die Durchführung der Analyse.", "Paramètres du projet, personnes et accès, et déroulement de l'analyse.", "Impostazioni del progetto, persone e accesso, e modalità di analisi."], "Drafts and gaps waiting for your decision.": ["Entwürfe und Lücken, die auf Ihren Entscheid warten.", "Brouillons et écarts en attente de votre décision.", "Bozze e lacune in attesa della tua decisione."]};
+const LANGS = ["en","de","fr","it"];
+const XL = {
+  de:{lang:"Deutsch (Schweiz)", orig:"Rechnungen externer Kanzleien über CHF 25'000 werden vor der Freigabe durch Legal Operations geprüft. Abweichungen vom vereinbarten Budget sind der verantwortlichen Juristin oder dem verantwortlichen Juristen innert fünf Arbeitstagen zu melden.",
+      en:"Invoices from outside law firms over CHF 25,000 are reviewed by Legal Operations before sign-off. Deviations from the agreed budget must be reported to the responsible lawyer within five working days.",
+      map:"New Level 1 area suggested: Legal spend management › Outside counsel invoice review"},
+  fr:{lang:"Français (Suisse)", orig:"Les contrats signés sont archivés dans le système de gestion documentaire dans un délai de dix jours ouvrables. Le service juridique désigne pour chaque contrat une personne responsable du classement.",
+      en:"Signed contracts are archived in the document management system within ten working days. The legal department appoints a person responsible for filing each contract.",
+      map:"Compliance and risk › Records and archiving (new Level 2 process)"},
+  it:{lang:"Italiano (Svizzera)", orig:"Le richieste di consulenza legale vengono registrate nel sistema entro due giorni lavorativi. In assenza di un responsabile designato, la richiesta viene assegnata al coordinatore del team.",
+      en:"Requests for legal advice are logged in the system within two working days. If no owner has been designated, the request is assigned to the team coordinator.",
+      map:"Service delivery and project management › Legal Service Request (LSR), matched to the existing process"}
+};
+let LANG = "en";
+try { LANG = localStorage.getItem("am-lang") || "en"; } catch(e) {}
+if(!LANGS.includes(LANG)) LANG = "en";
+const ORIG = new WeakMap();
+const L = i => LANGS.indexOf(LANG)-1;
+const W = {
+  de:{acts:"Tätigkeiten",act:"Tätigkeit",withg:"mit Lücken",gaps:"Lücken",gap:"Lücke",items:"Elemente",item:"Element",docs:"Dokumente",doc:"Dokument",people:"Personen",waiting:"offen",proc:"Prozesse",flag:"markiert",lvl:"Ebene",src:"Quelle",owner:"Verantwortlich",inv:"Beteiligt",none:"keine genannt",gen:"Erstellt",closes:"schliesst",and:"und",based:"Basierend auf",rights:"Alle Rechte vorbehalten.",exported:"Exportiert"},
+  fr:{acts:"activités",act:"activité",withg:"avec écarts",gaps:"écarts",gap:"Écart",items:"éléments",item:"élément",docs:"documents",doc:"document",people:"personnes",waiting:"en attente",proc:"processus",flag:"signalés",lvl:"Niveau",src:"Source",owner:"Responsable",inv:"Impliqués",none:"aucun nommé",gen:"Généré le",closes:"comble",and:"et",based:"Basé sur",rights:"Tous droits réservés.",exported:"Exporté"},
+  it:{acts:"attività",act:"attività",withg:"con lacune",gaps:"lacune",gap:"Lacuna",items:"elementi",item:"elemento",docs:"documenti",doc:"documento",people:"persone",waiting:"in attesa",proc:"processi",flag:"segnalati",lvl:"Livello",src:"Fonte",owner:"Responsabile",inv:"Coinvolti",none:"nessuno indicato",gen:"Generato il",closes:"colma",and:"e",based:"Basato su",rights:"Tutti i diritti riservati.",exported:"Esportato"}
+};
+function swissDate(t){ return t.replace(/\bOct (\d+), (\d{4})\b/g,(m,d,y)=>`${String(d).padStart(2,"0")}.10.${y}`); }
+function tr(en){
+  if(LANG==="en") return en;
+  const i = LANGS.indexOf(LANG)-1, w = W[LANG];
+  if(I18N[en]) return I18N[en][i];
+  let m;
+  if(m=en.match(/^(\d+) activities · (\d+) with gaps$/)) return `${m[1]} ${w.acts} · ${m[2]} ${w.withg}`;
+  if(m=en.match(/^(\d+) activit(?:y|ies)$/)) return `${m[1]} ${+m[1]===1?w.act:w.acts}`;
+  if(m=en.match(/^(\d+) items?$/)) return `${m[1]} ${+m[1]===1?w.item:w.items}`;
+  if(m=en.match(/^(\d+) gaps?$/)) return `${m[1]} ${w.gaps}`;
+  if(m=en.match(/^(\d+) documents?$/)) return `${m[1]} ${+m[1]===1?w.doc:w.docs}`;
+  if(m=en.match(/^(\d+) people$/)) return `${m[1]} ${w.people}`;
+  if(m=en.match(/^(\d+) waiting$/)) return `${m[1]} ${w.waiting}`;
+  if(m=en.match(/^Level 1 · (\d+) processes(?: · (\d+) flagged)?$/)) return `${w.lvl} 1 · ${m[1]} ${w.proc}${m[2]?` · ${m[2]} ${w.flag}`:""}`;
+  if(m=en.match(/^Level 3 · (\d+) activit(?:y|ies) · Source: (.+)$/)) return `${w.lvl} 3 · ${m[1]} ${+m[1]===1?w.act:w.acts} · ${w.src}: ${m[2]}`;
+  const c=LANG==="fr"?" :":":";
+  if(m=en.match(/^Owner: (.*?)(?: · Involved: (.*))?$/)) return `${w.owner}${c} ${m[1]==="none named"?w.none:m[1]}${m[2]?` · ${w.inv}${c} ${m[2]}`:""}`;
+  if(m=en.match(/^(.+?) · Owner: (.*?)(?: · Involved: (.*))?$/)) return `${m[1]} · ${w.owner}: ${m[2]==="none named"?w.none:m[2]}${m[3]?` · ${w.inv}: ${m[3]}`:""}`;
+  if(m=en.match(/^Gap (\d+):(.*)$/)) return `${w.gap} ${m[1]}${LANG==="fr"?" :":":"}${m[2]}`;
+  if(m=en.match(/^Generated (Oct \d+, \d{4}) · Closes Gaps? (.+)$/)) return `${w.gen} ${swissDate(m[1])} · ${w.closes} ${w.gaps} ${m[2].replace(" and ",` ${w.and} `)}`;
+  if(m=en.match(/^Based on (.+)$/)) return `${w.based} ${m[1]}`;
+  if(m=en.match(/^Exported (.+)$/)) return `${w.exported}: ${m[1]}`;
+  if(en.includes("All rights reserved.")) return en.replace("All rights reserved.", w.rights);
+  return en;
+}
+function translateNode(n){
+  if(!ORIG.has(n)) ORIG.set(n, n.textContent);
+  const en = ORIG.get(n), t = en.trim(); if(!t) return;
+  const out = tr(t);
+  const next = en.replace(t, out);
+  if(n.textContent !== next) n.textContent = next;
+}
+function translateTree(root){
+  const w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {acceptNode:n=>n.parentElement && n.parentElement.closest("script,style,svg,.lgrp,.gl,.xl,[data-noi18n]")?NodeFilter.FILTER_REJECT:NodeFilter.FILTER_ACCEPT});
+  let n; while(n=w.nextNode()) translateNode(n);
+}
+const MO = new MutationObserver(ms=>{ ms.forEach(m=>m.addedNodes.forEach(a=>{ if(a.nodeType===3){ if(!(a.parentElement&&a.parentElement.closest("script,style,svg,.lgrp,.gl,.xl"))) { ORIG.delete(a); translateNode(a);} } else if(a.nodeType===1) translateTree(a); })); });
+MO.observe(document.body, {childList:true, subtree:true});
+function setLang(l){
+  LANG = l; try { localStorage.setItem("am-lang", l); } catch(e) {}
+  document.documentElement.lang = l==="en" ? "en" : l+"-CH";
+  document.querySelectorAll(".lgrp button").forEach(b=>b.setAttribute("aria-pressed", b.dataset.lang===l));
+  const lc = document.getElementById("langCode"); if(lc) lc.textContent = l.toUpperCase();
+  const lm = document.getElementById("langMenu"); if(lm) lm.classList.remove("show");
+  const lb2 = document.getElementById("langBtn"); if(lb2) lb2.setAttribute("aria-expanded","false");
+  const sel = document.getElementById("uiLang"); if(sel) sel.value = l;
+  translateTree(document.body);
+}
+document.addEventListener("click", e=>{
+  const lb = e.target.closest("[data-lang]");
+  if(lb){ e.stopPropagation(); setLang(lb.dataset.lang); return; }
+  const xb = e.target.closest("[data-xl]");
+  if(xb){ e.stopPropagation(); const x = XL[xb.dataset.xl];
+    dialog(xb.closest(".row").querySelector(".rt").firstChild.textContent,
+      `<p class="xm">${tr("Detected language")}: <b>${x.lang}</b></p><div class="xl"><div><b>${tr("Original")}</b>${x.orig}</div><div><b>${tr("English translation")}</b>${x.en}</div></div><p class="xm">${tr("Mapped to")}: <b data-noi18n>${x.map}</b></p>`,
+      [["Close","primary safe"]]);
+    document.querySelector("#scrim .dialog").classList.add("wide");
+  }
+}, true);
+document.getElementById("langBtn").addEventListener("click", e=>{ e.stopPropagation(); const m=document.getElementById("langMenu"); m.classList.toggle("show"); e.currentTarget.setAttribute("aria-expanded", m.classList.contains("show")); document.getElementById("menu").classList.remove("show"); });
+document.addEventListener("click", e=>{ if(!e.target.closest(".langsel")) document.getElementById("langMenu").classList.remove("show"); });
+document.addEventListener("keydown", e=>{ if(e.key==="Escape") document.getElementById("langMenu").classList.remove("show"); });
+document.addEventListener("click", e=>{ if(e.target.closest("#scrim .btn")) setTimeout(()=>document.querySelector("#scrim .dialog").classList.remove("wide"),0); });
+setTimeout(()=>setLang(LANG), 500);
+</script>
+</body>
+</html>
