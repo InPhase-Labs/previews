@@ -372,6 +372,7 @@ html,body{overflow-x:hidden}
 <!-- ADMIN -->
 <section class="view" id="admin">
   <div class="head"><div><h1>Admin</h1><p class="sub">Project settings, people and access, and how the analysis runs.</p></div></div>
+  <div class="filters"><button class="btn" data-all="open">Open all</button><button class="btn" data-all="close">Collapse all</button></div>
   <p class="eyebrow">Settings</p><h2 class="sh">Project settings</h2>
   <div id="adminList"></div>
 </section>
@@ -379,6 +380,7 @@ html,body{overflow-x:hidden}
 <!-- MY REVIEWS -->
 <section class="view" id="reviews">
   <div class="head"><div><h1>My reviews</h1><p class="sub">Drafts and gaps waiting for your decision.</p></div></div>
+  <div class="filters"><button class="btn" data-all="open">Open all</button><button class="btn" data-all="close">Collapse all</button></div>
   <p class="eyebrow">Assigned to you</p><h2 class="sh">Waiting for review</h2>
   <div id="reviewList"></div>
 </section>
@@ -957,7 +959,7 @@ document.addEventListener("click", e=>{
   if(seg){
     seg.parentElement.querySelectorAll("button").forEach(x=>x.classList.toggle("on", x===seg));
     const k = seg.parentElement.dataset.seg;
-    if(k==="output"){ const g = seg.dataset.g; const ids = {process:"#byProcess", map:"#byMap", role:"#byRole"}; Object.entries(ids).forEach(([key,id])=>$(id).style.display = key===g?"":"none"); document.querySelector("#output .sh").textContent = {process:"Activities", map:"Process map", role:"Activities by role"}[g]; document.querySelectorAll('#output [data-all]').forEach(b=>b.style.display = g==="process"?"":"none"); }
+    if(k==="output"){ const g = seg.dataset.g; document.querySelectorAll("#output [data-all]").forEach(b=>b.style.display = g==="process"?"":"none"); const ids = {process:"#byProcess", map:"#byMap", role:"#byRole"}; Object.entries(ids).forEach(([key,id])=>$(id).style.display = key===g?"":"none"); document.querySelector("#output .sh").textContent = {process:"Activities", map:"Process map", role:"Activities by role"}[g]; document.querySelectorAll('#output [data-all]').forEach(b=>b.style.display = g==="process"?"":"none"); }
     if(k==="tax"){ renderTax(seg.dataset.g); document.querySelector("#taxonomy .sh").textContent = seg.dataset.g==="prop"?"Process areas":"Playbook sections"; document.querySelector("#taxonomy .eyebrow").textContent = seg.dataset.g==="prop"?"Proposed structure":"As written"; applyState(); }
     return;
   }
